@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<style>
+  :root { --or:#ee7a3c; --orl:#fdeee3; --gr:#e8e8e8; }
+  .title { margin: 2mm auto 3mm; width: 132mm; height: 15mm; border-radius: 8mm;
+           background: linear-gradient(#f39a5f, #eb7535); color:#fff; text-align:center;
+           font-size: 25pt; font-weight: 900; line-height: 15mm; letter-spacing: 1pt; }
+  .note { text-align:right; font-size: 8.5pt; margin-bottom: 1mm; }
+  table.main { border: 1.4pt solid #333; table-layout: fixed; }
+  table.main td { border: 0.6pt solid #888; height: 7.9mm; text-align:center; font-size: 9pt; }
+  td.lab { background: var(--orl); color: var(--or); font-weight: 700; font-size: 10pt; border-right: 1.2pt solid #333; }
+  td.sub { background: var(--gr); }
+  td.hd { background: var(--gr); }
+  td.l { text-align:left; }
+  tr.sec td { border-top: 1.4pt solid #333; }
+  .opts .opt { margin-right: 4mm; }
+  .base { display:inline-block; border:0.5pt solid #777; font-size:6pt; padding:0 0.6mm; line-height:1.2; color:#555; vertical-align: 0.5mm; margin-left: 0.5mm; }
+  .stack div { text-align:left; padding: 0.6mm 0; white-space: nowrap; }
+  table.inner { table-layout: fixed; width: 100%; }
+  table.inner td { border: 0.6pt solid #888; }
+  td.nopad { padding: 0; }
+  .vents { display:flex; justify-content: space-around; align-items:flex-end; }
+  .vents div { text-align:center; font-size: 8pt; }
+  .vents img { height: 16mm; display:block; margin: 0 auto 1mm; }
+  .acc td { height: 19mm; vertical-align: top; text-align:left; font-size: 9pt; }
+  .acc .nm { display:block; text-align:center; margin-top: 4mm; line-height:1.35; }
+  .foot { display:flex; justify-content: space-between; align-items: flex-end; bottom: 7mm; }
+  .gn { color: var(--or); font-weight: 700; font-size: 15pt; }
+  .gn span { color:#666; font-weight:400; font-size: 11pt; }
+</style><link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.v{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head>
+<body><div class="page">
+<div class="title">귓속형 보청기 주문서</div>
+<div class="note">※ 공란의 경우 기본값으로 제작됩니다.</div>
+<table class="main">
+<colgroup><col style="width:25mm"><col style="width:20mm"><col span="10"></colgroup>
+<tr><td class="lab">주문서 작성일</td><td colspan="8"></td><td colspan="3" class="hd" style="border-left:1.2pt solid #333">보장구 신청여부</td></tr>
+<tr><td class="lab">출고요청 일자</td><td colspan="8"></td><td colspan="3" style="border-left:1.2pt solid #333"><span class="opt"><span class="cb"></span>신청</span><span class="opt"><span class="cb"></span>미신청</span></td></tr>
+<tr class="sec"><td class="lab">주문업체</td><td class="sub">업체명</td><td colspan="4" class="l"><span class="fill">새봄보청기(수원)</span></td><td colspan="2" class="sub">연락처</td><td colspan="4" class="l"><span class="fill">010-5559-6640</span></td></tr>
+<tr><td class="lab">고객정보</td><td class="sub">고객명</td><td colspan="4"></td><td colspan="2" class="sub">나이</td><td colspan="4"></td></tr>
+<tr class="sec"><td class="lab" rowspan="3">보청기<br>사용 여부</td><td class="sub" style="height:11mm">보청기<br>사용 여부</td><td colspan="4"><span class="opt"><span class="cb"></span>예</span><span class="opt"><span class="cb"></span>아니오</span></td><td colspan="2" class="sub">사용 보청기<br>형태</td>
+  <td colspan="4" class="l stack" style="padding-left:3mm"><div><span class="opt" style="width:13mm"><span class="cb"></span>IIC</span><span class="opt" style="width:13mm"><span class="cb"></span>CIC</span><span class="opt"><span class="cb"></span>ITC</span></div><div><span class="opt" style="width:13mm"><span class="cb"></span>ITE</span><span class="opt" style="width:13mm"><span class="cb"></span>RIE</span><span class="opt"><span class="cb"></span>BTE</span></div></td></tr>
+<tr><td colspan="11" class="l small" style="padding-left:5mm; line-height:1.5">※ 사용하였던 보청기에 대한 정보를 체크해주시면 제작에 참고하겠습니다.<br>※ 사용 중인 보청기의 쉘 사진을 동봉해주시면 사이즈를 보다 만족스럽게 제작해드립니다.</td></tr>
+<tr><td class="sub">카날 길이</td><td colspan="4"><span class="opt"><span class="cb"></span>짧음</span><span class="opt"><span class="cb"></span>중간</span><span class="opt"><span class="cb"></span>김</span></td><td colspan="2" class="sub">쉘 두께</td><td colspan="4"><span class="opt"><span class="cb"></span>빡빡함</span><span class="opt"><span class="cb"></span>느슨함</span></td></tr>
+<tr class="sec"><td class="lab" rowspan="3">피팅요청 값</td><td class="sub">청각검사표</td><td>125</td><td>250</td><td>500</td><td>1K</td><td>1.5K</td><td>2K</td><td>3K</td><td>4K</td><td>6K</td><td>8K</td></tr>
+<tr><td class="sub">L</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="sub">R</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<!-- 주문제품 -->
+<tr class="sec"><td class="lab" rowspan="7">주문제품<br>및<br>옵션사항</td><td colspan="5" class="hd">제품명</td><td colspan="6" class="hd">배터리</td></tr>
+<tr><td class="sub">L</td><td colspan="4"></td><td colspan="6"><span class="opt" style="margin-right:9mm"><span class="cb"></span>10</span><span class="opt" style="margin-right:9mm"><span class="cb"></span>312</span><span class="opt"><span class="cb"></span>13</span></td></tr>
+<tr><td class="sub">R</td><td colspan="4"></td><td colspan="6"><span class="opt" style="margin-right:9mm"><span class="cb"></span>10</span><span class="opt" style="margin-right:9mm"><span class="cb"></span>312</span><span class="opt"><span class="cb"></span>13</span></td></tr>
+<tr><td class="sub" style="height:12mm">쉘 형태</td><td colspan="4" class="l stack" style="padding-left:3mm"><div><span class="opt" style="width:13mm"><span class="cb"></span>IIC</span><span class="opt" style="width:13mm"><span class="cb"></span>CIC</span><span class="opt"><span class="cb"></span>ITC</span></div><div><span class="opt" style="width:21mm"><span class="cb"></span>ITE Half</span><span class="opt"><span class="cb"></span>ITE Full</span></div></td>
+  <td colspan="2" class="sub">출력(이득)</td><td colspan="4" style="font-size:8pt; white-space:nowrap; padding:0 1mm"><span class="opt" style="margin-right:1mm"><span class="cb"></span>LP(40)</span><span class="opt" style="margin-right:1mm"><span class="cb"></span>MP(50)</span><span class="opt" style="margin-right:1mm"><span class="cb"></span>HP(60)</span><span class="opt" style="margin-right:0"><span class="cb"></span>UP(70)</span></td></tr>
+<tr><td colspan="11" class="nopad">
+  <table class="inner">
+   <colgroup><col style="width:21mm"><col style="width:20mm"><col style="width:18mm"><col style="width:19mm"><col style="width:24mm"><col></colgroup>
+   <tr><td class="hd c" style="height:6.5mm">색상</td><td class="hd c">면판</td><td class="hd c">카날길이</td><td class="hd c">손잡이</td><td class="hd c" colspan="2">Vent</td></tr>
+   <tr style="height:44mm">
+    <td class="stack" style="vertical-align:top; padding-top:2mm"><div><span class="cb"></span>Beige<span class="base">기본</span></div><div><span class="cb"></span>Blue</div><div><span class="cb"></span>Red</div><div><span class="cb"></span>Black</div><div><span class="cb"></span>무연탄</div><div class="tiny" style="white-space:normal; line-height:1.25; padding-top:1mm">※충전식 귓속형은 무연탄과 베이지 컬러만 선택 가능</div></td>
+    <td class="stack" style="vertical-align:top; padding-top:2mm"><div><span class="cb"></span>Beige<span class="base">기본</span></div><div><span class="cb"></span>무연탄</div></td>
+    <td class="stack" style="vertical-align:top; padding-top:2mm"><div><span class="cb"></span>Short</div><div><span class="cb"></span>Med<span class="base">기본</span></div><div><span class="cb"></span>Long</div></td>
+    <td class="stack" style="vertical-align:top; padding-top:2mm"><div><span class="cb"></span>짧게</div><div><span class="cb"></span>보통<span class="base">기본</span></div><div><span class="cb"></span>길게</div><div><span class="cb"></span>고리형</div><div><span class="cb"></span>없음</div></td>
+    <td class="stack" style="vertical-align:top; padding-top:2mm"><div><span class="cb"></span>제조사 권장<span class="base">기본</span></div><div><span class="cb"></span>No Vent</div><div><span class="cb"></span>1.0mm</div><div><span class="cb"></span>1.2mm</div><div><span class="cb"></span>1.5mm</div><div><span class="cb"></span>1.8mm</div><div><span class="cb"></span>2.1mm</div></td>
+    <td style="vertical-align:middle"><div class="vents">
+      <div><img src="img/gn_vent_1.png"><span class="cb"></span>일반<br>벤트</div>
+      <div><img src="img/gn_vent_2.png"><span class="cb"></span>아이로스<br>벤트</div>
+      <div><img src="img/gn_vent_3.png"><span class="cb"></span>사이드<br>벤트</div>
+      <div><img src="img/gn_vent_4.png"><span class="cb"></span>플레이트<br>벤트</div></div></td>
+   </tr>
+  </table></td></tr>
+<tr><td class="sub" style="height:12mm">옵션선택</td><td colspan="4" class="l stack" style="padding-left:2mm"><div><span class="opt" style="width:14mm"><span class="cb"></span>V/C</span><span class="opt"><span class="cb"></span>프로그램 버튼 (P/B)</span></div><div><span class="opt" style="width:30mm"><span class="cb"></span>Telecoil <span class="tiny">(CIC 불가)</span></span><span class="opt"><span class="cb"></span>Canal Lock</span></div></td>
+  <td colspan="2" class="sub">왁스가드</td><td colspan="4" style="font-size:8pt; white-space:nowrap; padding:0 1mm"><span class="opt" style="margin-right:1.2mm"><span class="cb"></span>Coil</span><span class="opt" style="margin-right:1.2mm"><span class="cb"></span>Guard<span class="base">기본</span></span><span class="opt" style="margin-right:1.2mm"><span class="cb"></span>Filter</span><span class="opt" style="margin-right:0"><span class="cb"></span>ERT</span></td></tr>
+<tr><td class="sub" style="height:13mm">쉘 제작 시<br>우선 순위</td><td colspan="10"><span class="opt" style="margin-right:16mm"><span class="cb"></span>쉘 사이즈</span><span class="opt" style="margin-right:16mm"><span class="cb"></span>리시버 출력</span><span class="opt"><span class="cb"></span>벤트 사이즈 확보</span></td></tr>
+<!-- 액세서리 -->
+<tr class="sec acc"><td class="lab" style="vertical-align:middle; text-align:center">액세서리</td><td colspan="11" class="nopad">
+  <table class="inner"><tr>
+   <td><span class="cb"></span><span class="nm">TV 링크 2<br>(TV 스트리머 2)</span></td>
+   <td><span class="cb"></span><span class="nm">폰 링크 2<br>(폰 클립 +)</span></td>
+   <td><span class="cb"></span><span class="nm">마이팔 프로<br>(멀티 마이크)</span></td>
+   <td><span class="cb"></span><span class="nm">마이팔 마이크로<br>(마이크로 마이크)</span></td>
+   <td><span class="cb"></span><span class="nm">리모트 컨트롤 2</span></td>
+   <td><span class="cb"></span><span class="nm">리모트 컨트롤 3</span></td>
+  </tr></table></td></tr>
+<tr class="sec"><td class="lab" style="height:17mm">주문배송</td><td class="sub">배송수단</td><td colspan="5" class="l"><div style="margin-bottom:1mm"><span class="opt"><span class="cb"></span>택배</span><span class="opt"><span class="cb"></span>퀵서비스</span><span class="opt"><span class="cb"></span>고속/KTX</span></div><div class="small">※택배를 제외한 다른 배송수단은 유상 배송입니다.</div></td>
+  <td colspan="2" class="lab" style="border-left:0.6pt solid #888">기타<br>요청사항</td><td colspan="3"></td></tr>
+</table>
+<div class="foot"><div class="gn">GN</div>
+ <div class="r" style="line-height:1.5"><b>(주)지엔히어링코리아</b> &nbsp;서울 성동구 성수일로 39-34 서울숲 더 스페이스 3층<br>Tel) 02-541-9228 &nbsp; Fax) 02-501-1909 &nbsp; Email) krcs03@gnhearing.com</div></div>
+</div></body></html>

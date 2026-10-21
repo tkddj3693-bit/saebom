@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#2e6b4f">
+<title>새봄 주문서</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="lib/noto-sans-kr.css">
+<style>
+:root{--g:#2e6b4f;--g2:#e7f1ec;--ink:#1f2328;--mut:#68707a;--line:#d9dee3;--bg:#f4f6f5;--navy:#0b2f6b;--warn:#b4462b}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:17px}
+body{font-family:"Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;padding-bottom:110px}
+button{font:inherit;color:inherit;border:none;background:none;cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+header h1{font-size:1.1rem;font-weight:700;flex:1;line-height:1.3}
+header small{display:block;font-size:.75rem;font-weight:400;opacity:.85}
+header .back{font-size:1.5rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15)}
+main{max-width:640px;margin:0 auto;padding:14px 16px}
+.brand{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;border:1px solid var(--line)}
+.brand h2{font-size:1.05rem;margin-bottom:8px}
+.fbtn{display:flex;width:100%;align-items:center;justify-content:space-between;padding:14px;border-radius:10px;background:var(--g2);margin-top:8px;font-weight:700;font-size:1.05rem;text-align:left}
+.fbtn::after{content:"›";font-size:1.5rem;color:var(--g)}
+.fbtn.off{background:#f1f2f3;color:#a3a9b0;font-weight:500;font-size:.95rem;padding:10px 14px}
+.fbtn.off::after{content:"준비 중";font-size:.8rem;color:#a3a9b0}
+.note{background:#fff8e1;border-radius:10px;padding:10px 12px;font-size:.88rem;margin-bottom:12px}
+.sec{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;border:1px solid var(--line)}
+.sec h2{font-size:1.05rem;color:var(--g);margin-bottom:2px}
+.sec .hint{font-size:.82rem;color:var(--mut);margin-bottom:6px}
+.it{padding:10px 0;border-top:1px solid #eef0f2}
+.sec h2+.it,.sec .hint+.it{border-top:none}
+.it label.l,.it .l{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+.it .tip{font-size:.8rem;color:var(--mut);margin-top:4px}
+input[type=text],input[type=date],input[type=number],textarea{width:100%;font:inherit;font-size:1.05rem;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus,textarea:focus{outline:none;border-color:var(--g)}
+textarea{min-height:90px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:46px;padding:10px 16px;border:1.5px solid var(--line);border-radius:23px;background:#fff;font-size:1rem;font-weight:500}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip .d{font-size:.7rem;border:1px solid currentColor;border-radius:4px;padding:0 3px;margin-left:5px;opacity:.7;vertical-align:2px}
+.lr{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:center;margin-bottom:8px}
+.lr b{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;font-size:.95rem;color:#fff}
+.lr b.L{background:#2b5d97}.lr b.R{background:#b4462b}
+.same{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--mut);margin:2px 0 6px 42px}
+.same input{width:22px;height:22px}
+table.aud{width:100%;border-collapse:collapse}
+table.aud th{font-size:.85rem;color:var(--mut);font-weight:500;padding:4px}
+table.aud th.L{color:#2b5d97;font-weight:700}table.aud th.R{color:#b4462b;font-weight:700}
+table.aud td{padding:3px}
+table.aud td.f{font-weight:700;width:60px;text-align:center;font-size:.95rem}
+table.aud input{text-align:center;padding:9px 4px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;z-index:6}
+.bar button{flex:1;height:54px;border-radius:12px;font-weight:700;font-size:1.05rem}
+.b1{background:#eef1f3}.b2{background:var(--g);color:#fff}
+.clear{display:block;margin:6px auto 0;color:var(--mut);font-size:.9rem;text-decoration:underline;padding:10px}
+#pv{position:fixed;inset:0;background:#3a3f45;z-index:10;display:none;flex-direction:column}
+#pv.show{display:flex}
+#pv .top{color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+#pv .top span{flex:1}
+#pv .wrap{flex:1;overflow:auto;padding:0 10px}
+#pv .bar{position:static}
+#frameBox{transform-origin:0 0;box-shadow:0 2px 12px rgba(0,0,0,.4);background:#fff}
+#frame{width:794px;height:1123px;border:0;display:block;background:#fff}
+#holder{position:fixed;left:-10000px;top:0}
+#busy{position:fixed;inset:0;background:rgba(0,0,0,.45);color:#fff;display:none;align-items:center;justify-content:center;z-index:20;font-size:1.1rem;font-weight:700}
+#busy.show{display:flex}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:20px;font-size:.92rem;z-index:30}
+.foot{text-align:center;font-size:.78rem;color:var(--mut);margin-top:8px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="holder"><div id="frameBox"><iframe id="frame" title="서식 미리보기"></iframe></div></div>
+<div id="pv">
+  <div class="top"><button class="back" id="pvClose" style="color:#fff;font-size:1.5rem">‹</button><span>미리보기 — 제조사에 가는 모양이에요</span></div>
+  <div class="wrap" id="pvWrap"></div>
+  <div class="bar"><button class="b1" id="pvSave">PDF 저장</button><button class="b2" id="pvShare">카톡으로 보내기</button></div>
+</div>
+<div id="busy">PDF 만드는 중…</div>
+<script src="forms.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
