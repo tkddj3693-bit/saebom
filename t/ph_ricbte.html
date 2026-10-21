@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>새봄_포낙_RIC·BTE_주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root{--b:#7a9fb2;--bd:#5d8296;--lab:#dde3e6;--L:#3b6fb6;--R:#d2453a;--skin:#c8955a;--Lbg:#dff1f8;--Rbg:#fbe6ea}
+.page{padding:8mm 9mm 7mm;}
+.top{display:flex;align-items:flex-start;height:30mm;}
+.tag{display:inline-block;border:0.8pt solid var(--bd);color:var(--bd);border-radius:1.5mm;padding:0.3mm 2.5mm;font-size:9.5pt;}
+.t1{font-size:23pt;font-weight:900;line-height:1.15;margin-top:0.5mm}
+.t2{font-size:19pt;font-weight:900;line-height:1.1}
+.t2 .b{display:inline-block;background:#333;color:#fff;font-size:15pt;border-radius:6mm;padding:0.2mm 4mm;vertical-align:2px}
+.send{margin-left:auto;width:96mm;border:1pt solid #333}
+.send td{border:none;border-bottom:0.5pt dotted #999;padding:1.4mm 2mm;font-size:9.5pt}
+.send .h{background:#e6e6e6;text-align:center;font-size:11pt;font-weight:500;border-bottom:0.8pt solid #333}
+.send .w{color:var(--R);font-size:6.8pt;text-align:center;border-bottom:none}
+.step{background:var(--b);color:#fff;font-weight:700;font-size:11pt;padding:0.6mm 3mm;margin-top:1.5mm}
+.step em{font-style:normal;color:#ffe;font-size:9pt;font-weight:500;margin-left:2mm}
+td,th{border-color:#aaa}
+.lab{background:var(--lab);text-align:center;font-weight:500;white-space:nowrap}
+.s1 td{border-left:none;border-right:none;height:7.5mm;font-size:9.5pt}
+.s1 .v{border-right:0.6pt solid #aaa}
+.star{color:#c33}
+.ag{width:100%;margin-top:1mm}
+.ag td{border:0.6pt solid #888;text-align:center;font-size:8pt;padding:0.8mm 0;height:6.5mm}
+.ag .lr{border:none;width:5mm;font-weight:700;font-size:11pt}
+.ag .hz{border:none;width:7mm;text-align:left;font-size:7.5pt;color:#555}
+td.Lx{background:var(--Lbg)} td.Rx{background:var(--Rbg)}
+.Lc{color:var(--L)}.Rc{color:var(--R)}
+.ph{color:#aaa;font-size:7.5pt;text-align:center}
+.s2 td{height:7mm;text-align:center}
+.pan{border:1.2pt solid var(--bd);}
+.pan>tbody>tr>td{font-size:9pt;height:8.3mm}
+.ph2{background:var(--bd);color:#fff;text-align:center;font-weight:700;font-size:10.5pt;padding:0.6mm}
+.mold{display:inline-block;width:32%;text-align:center;vertical-align:bottom;font-size:9pt}
+.mold img{height:10.5mm;display:block;margin:0 auto 0.5mm;mix-blend-mode:multiply}
+.vimg{text-align:center;display:inline-block;width:24%;vertical-align:bottom;font-size:8.3pt}
+.vimg img{height:13mm;display:block;margin:0 auto 1mm;mix-blend-mode:multiply}
+.num{display:inline-block;width:4.2mm;height:4.2mm;border:0.7pt solid #333;border-radius:50%;text-align:center;font-size:7.5pt;line-height:4mm;margin-right:0.6mm}
+.memo{background:#ececec;height:11mm;margin-top:1.5mm;padding:1.5mm 3mm;font-size:9.5pt}
+.foot{display:flex;justify-content:space-between;bottom:4mm;left:9mm;right:9mm}
+.skin{color:var(--skin)}
+.o{margin-right:3mm}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+
+<div class="top">
+  <div><span class="tag">제조사용</span>
+    <div class="t1">포낙 / 유니트론</div>
+    <div class="t2">RIC / BTE 보청기 <span class="b">신규 주문서</span></div></div>
+  <table class="send">
+    <tr><td class="h" colspan="2">함께 보내시는 물품에 체크</td></tr>
+    <tr><td><span class="cb round"></span>보청기 (수량:<span data-f="qHA" style="display:inline-block;min-width:8mm;text-align:center"></span>)</td><td><span class="cb round"></span>부속품 (수량:<span data-f="qAcc" style="display:inline-block;min-width:8mm;text-align:center"></span>)</td></tr>
+    <tr><td><span class="cb round"></span>귓&ensp;본 (수량:<span data-f="qImp" style="display:inline-block;min-width:8mm;text-align:center"></span>)</td><td><span class="cb round"></span>기&ensp;타 (수량:<span data-f="qEtc" style="display:inline-block;min-width:8mm;text-align:center"></span>)</td></tr>
+    <tr><td class="w" colspan="2">*주의 : 발송하신 물품에 대해 체크하지 않을 경우, 당사는 책임을 지지 않음을 알려드립니다.</td></tr>
+  </table>
+</div>
+
+<div class="step">Step 1. 고객 정보 <em>*필수 기입 항목</em></div>
+<table class="s1"><tr>
+  <td style="width:52%;padding:0;border:none;vertical-align:top">
+    <table>
+      <tr><td colspan="2" class="v">브랜드 : &ensp;<span class="opt" style="font-weight:700;font-size:10.5pt"><span class="cb round"></span>포낙</span><span class="opt" style="font-weight:700;font-size:10.5pt"><span class="cb round"></span>유니트론</span></td></tr>
+      <tr><td colspan="2" class="v"><span class="star">*</span> 센터명 : <span class="fill">새봄보청기(수원)</span><span style="float:right">(센터코드 :&emsp;&emsp;&emsp;&emsp;&emsp;)</span></td></tr>
+      <tr><td style="width:50%"><span class="star">*</span> 고객명 : <span data-f="nm" style="display:inline-block;min-width:20mm;text-align:center"></span></td><td class="v"><span class="star">*</span> 나이 : <span data-f="age" style="display:inline-block;min-width:14mm;text-align:center"></span><span style="float:right;margin-right:4mm">세</span></td></tr>
+      <tr><td><span class="star">*</span> 직업 : <span data-f="job" style="display:inline-block;min-width:20mm;text-align:center"></span></td><td class="v"><span class="star">*</span> 성별 : &ensp;<span class="opt"><span class="cb round"></span>남</span><span class="opt"><span class="cb round"></span>여</span></td></tr>
+      <tr><td colspan="2" class="v">유상배송 : &ensp;<span class="opt"><span class="cb round"></span>지하철</span><span class="opt"><span class="cb round"></span>퀵서비스</span><span class="opt"><span class="cb round"></span>고속버스</span></td></tr>
+      <tr><td>주문일 : <span data-f="oY" style="display:inline-block;min-width:8mm;text-align:center"></span>년<span data-f="oM" style="display:inline-block;min-width:6mm;text-align:center"></span>월<span data-f="oD" style="display:inline-block;min-width:6mm;text-align:center"></span>일</td><td class="v">도착일 : <span data-f="aY" style="display:inline-block;min-width:8mm;text-align:center"></span>년<span data-f="aM" style="display:inline-block;min-width:6mm;text-align:center"></span>월<span data-f="aD" style="display:inline-block;min-width:6mm;text-align:center"></span>일</td></tr>
+    </table></td>
+  <td style="padding:0 0 0 3mm;border:none;vertical-align:top">
+    <table>
+      <tr><td style="border:none;height:auto;padding-top:1.5mm"><span class="star">*</span> <b style="font-size:11pt">청력</b> (Hearing Level)
+        <table class="ag">
+          <tr><td class="lr"></td><td>250</td><td>500</td><td>1000</td><td>1500</td><td>2000</td><td>3000</td><td>4000</td><td>6000</td><td>8000</td><td class="hz">Hz</td></tr>
+          <tr><td class="lr Lc">L</td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="Lx"></td><td class="hz">dB</td></tr>
+          <tr><td class="lr Rc">R</td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="Rx"></td><td class="hz">dB</td></tr>
+        </table></td></tr>
+      <tr><td>상담 요청 : &ensp;<span class="opt"><span class="cb round"></span>CS상담 (주문, 배송)</span><span class="opt"><span class="cb round"></span>쉘 상담</span></td></tr>
+      <tr><td>상담가능 연락처 : <span class="fill">010-5559-6640</span></td></tr>
+      <tr><td>보청기 보증기간 연장 <span class="Rc">(유상)</span> : &ensp;<span class="cb round"></span>1년 추가</td></tr>
+    </table></td>
+</tr></table>
+
+<div class="step">Step 2. 제품 선택</div>
+<table class="s2">
+  <tr><td class="lab" style="width:28mm">제품 타입</td><td colspan="5" style="text-align:left;padding-left:12mm"><span class="opt" style="margin-right:14mm"><span class="cb round"></span>RIC</span><span class="opt"><span class="cb round"></span>BTE</span></td></tr>
+  <tr><td class="lab" colspan="2">제품명</td><td class="lab" style="width:26mm">색상</td><td class="lab" style="width:18mm">수량</td><td class="lab" colspan="2">리시버</td></tr>
+  <tr><td colspan="2"></td><td></td><td></td><td class="Lc" style="background:var(--Lbg);font-weight:500">왼쪽 (좌)</td><td class="Rc" style="background:var(--Rbg);font-weight:500">오른쪽 (우)</td></tr>
+  <tr><td colspan="2"></td><td></td><td></td><td style="background:var(--Lbg)" class="ph" data-f="rcvL">예) 1M X 4 (길이, 출력 X 갯수)</td><td style="background:var(--Rbg)" class="ph" data-f="rcvR">예) 1M X 4 (길이, 출력 X 갯수)</td></tr>
+  <tr><td colspan="2" class="lab">합계</td><td class="lab" data-f="_skip"></td><td></td><td class="lab">돔</td><td class="ph" data-f="dome">예) 벤티드 S X 1개 (종류, 크기, 갯수)</td></tr>
+</table>
+
+<div class="step">Step 3. 세부 선택</div>
+<table style="margin-top:1mm"><tr>
+<td style="border:none;padding:0 1.5mm 0 0;width:50%;vertical-align:top">
+  <table class="pan">
+    <tr><td colspan="3" class="ph2">RIC용 옵션</td></tr>
+    <tr><td class="lab" style="width:22mm">제작 쉘</td><td colspan="2" style="line-height:1.6"><span class="opt"><span class="cb round"></span>cShell</span><span class="opt" style="margin-right:0"><span class="cb round"></span>SlimTip <span class="tiny">(SP/SP+/UP선택불가)</span></span><br><span class="cb round"></span>CROSTip</td></tr>
+    <tr><td class="lab" rowspan="2">리시버</td><td class="Lc c" style="background:var(--Lbg);height:6.5mm">왼쪽 (좌)</td><td class="Rc c" style="background:var(--Rbg)">오른쪽 (우)</td></tr>
+    <tr><td class="ph" style="background:var(--Lbg);height:8mm" data-f="ricL">예) 1M X 4<br>(길이, 출력 X 갯수)</td><td class="ph" style="background:var(--Rbg)" data-f="ricR">예) 1M X 4<br>(길이, 출력 X 갯수)</td></tr>
+    <tr><td class="lab">귀지방지<div class="tiny Rc">*Only cShell</div></td><td colspan="2"><span class="opt" style="margin-right:2mm"><span class="cb round"></span>왁스가드</span><span class="opt" style="margin-right:2mm"><span class="cb round"></span>스프링가드</span><span class="opt" style="margin-right:0"><span class="cb round"></span>ERT <span class="tiny">(튜브연장)</span></span></td></tr>
+    <tr><td class="lab">쉘 사이즈</td><td colspan="2"><span class="opt o" style="width:20mm"><span class="cb round"></span>최소</span><span class="opt o" style="width:20mm"><span class="cb round"></span>기본</span><span class="opt"><span class="cb round"></span>크게</span></td></tr>
+    <tr><td class="lab">카날 길이</td><td colspan="2"><span class="opt o" style="width:20mm"><span class="cb round"></span>짧게</span><span class="opt o" style="width:20mm"><span class="cb round"></span>중간</span><span class="opt"><span class="cb round"></span>길게</span></td></tr>
+    <tr><td class="lab">쉘 색상</td><td colspan="2" style="font-size:8.6pt"><span class="opt skin" style="margin-right:1.5mm"><span class="cb round"></span>살색</span><span class="opt Lc" style="margin-right:1.5mm"><span class="cb round"></span>파랑(좌)</span><span class="opt Rc" style="margin-right:1.5mm"><span class="cb round"></span>빨강(우)</span><span class="opt" style="margin-right:0"><span class="cb round"></span>방향표시점</span></td></tr>
+    <tr><td class="lab">코팅 종류</td><td colspan="2"><span class="opt" style="margin-right:12mm"><span class="cb round"></span>일반 코팅</span><span class="opt"><span class="cb round"></span>무광 코팅</span></td></tr>
+  </table></td>
+<td style="border:none;padding:0 0 0 1.5mm;vertical-align:top">
+  <table class="pan">
+    <tr><td colspan="3" class="ph2">BTE용 옵션</td></tr>
+    <tr><td class="lab" style="width:22mm">몰드 종류</td><td colspan="2"><span class="opt" style="margin-right:12mm"><span class="cb round"></span>하드</span><span class="opt"><span class="cb round"></span>소프트</span></td></tr>
+    <tr><td class="lab" rowspan="2">몰드 형태</td><td colspan="2" style="height:17mm"><div class="mold"><img src="img/phonak_mold_canal.png"><span class="cb round"></span>Canal</div><div class="mold"><img src="img/phonak_mold_half.png"><span class="cb round"></span>Half Shell</div><div class="mold"><img src="img/phonak_mold_full.png"><span class="cb round"></span>Full shell</div></td></tr>
+    <tr><td colspan="2" style="height:18mm;position:relative"><span class="tiny Rc" style="position:absolute;left:30mm;top:1mm">*하드 Only</span><div class="mold" style="width:48%"><img src="img/phonak_mold_canallock.png"><span class="cb round"></span>Canal Lock</div><div class="mold" style="width:48%"><img src="img/phonak_mold_skeleton.png"><span class="cb round"></span>Skeleton</div></td></tr>
+    <tr><td class="lab" style="height:14mm">튜브 종류</td><td style="line-height:1.7"><span class="cb round"></span>일반 튜브<br><span class="cb round"></span>엘보우 ('ㄱ'자 튜브)<br><span class="tiny Rc" style="margin-left:4mm">*하드 Only</span></td>
+      <td class="c" style="width:27mm"><div style="font-weight:500;margin-bottom:1mm">파워슬림튜브</div><span style="white-space:nowrap;font-size:8.5pt"><span class="opt" style="margin-right:0.8mm"><span class="cb round" style="margin-right:0.4mm"></span>0</span><span class="opt" style="margin-right:0.8mm"><span class="cb round" style="margin-right:0.4mm"></span>1</span><span class="opt" style="margin-right:0.8mm"><span class="cb round" style="margin-right:0.4mm"></span>2</span><span class="opt" style="margin-right:0mm"><span class="cb round" style="margin-right:0.4mm"></span>3</span></span></td></tr>
+  </table></td>
+</tr></table>
+
+<table class="pan" style="margin-top:2mm">
+  <tr><td colspan="4" class="ph2">공통선택 <span style="font-weight:400;font-size:8.5pt">(소프트 몰드는 벤트, 손잡이 불가)</span></td></tr>
+  <tr><td class="lab" style="width:22mm" rowspan="2">벤트 종류</td><td rowspan="2" style="width:84mm;height:25mm"><div class="vimg"><img src="img/phonak_vent1.png"><span class="cb round"></span>일반형<br><span class="tiny">(스탠다드)</span></div><div class="vimg"><img src="img/phonak_vent2.png"><span class="cb round"></span>레귤러<br>&nbsp;</div><div class="vimg"><img src="img/phonak_vent3.png"><span class="cb round"></span>IROS<br>&nbsp;</div><div class="vimg"><img src="img/phonak_vent4.png"><span class="cb round"></span>Trench<br><span class="tiny">(트렌치)</span></div>
+      <div class="tiny Rc" style="margin-top:1mm">*SlimTip의 경우 일반형 선택 시 Cavity형태로 제작 됩니다.</div></td>
+    <td class="lab" style="width:22mm">벤트 크기</td><td style="line-height:1.8"><span class="opt"><span class="cb round"></span>AOV <span class="tiny">(음향최적화벤트, 오디오그램 필수)</span></span><span class="opt" style="margin-right:0"><span class="cb round"></span>없음</span><br><span class="opt Lc"><span class="cb round"></span>L <span class="line" style="min-width:16mm;text-align:center" data-f="vL"></span> mm</span><span class="opt Rc"><span class="cb round"></span>R <span class="line" style="min-width:16mm;text-align:center" data-f="vR"></span> mm</span></td></tr>
+  <tr><td class="lab">손잡이 길이</td><td style="line-height:1.8"><span class="opt" style="margin-right:1.6mm"><span class="cb round"></span>U형태</span><span class="opt" style="margin-right:1.6mm"><span class="cb round"></span>짧게</span><span class="opt" style="margin-right:1.6mm"><span class="cb round"></span>중간</span><span class="opt" style="margin-right:1.6mm"><span class="cb round"></span>길게</span><span class="opt" style="margin-right:0"><span class="cb round"></span>없음</span><br>길이요청 : <span class="line" style="min-width:26mm;text-align:center" data-f="rhLen"></span> mm</td></tr>
+</table>
+
+<div class="memo" style="display:flex;gap:3mm;padding:1mm 3mm">특이사항 <span data-f="memo" style="flex:1"></span></div>
+
+<div class="foot"><span>ⓒ Sonova. All rights reserved.&ensp; 서울특별시 성동구 성수일로12길 26 6,7층&ensp; TEL 1899-0089&ensp; FAX : 02-859-9332</span><span>개정일: 2025.11.10&ensp; MKT_PH(OrderForm)_1p_2511_V2</span></div>
+</div></body></html>

@@ -5,13 +5,23 @@ const R = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 
 const BRANDS = [
   { name: '벨톤 (GN)', forms: [
-    { id: 'gn_ite', name: '귓속형 주문서' },
-    { name: '귀걸이형 주문서' }, { name: '반품사유서' }, { name: '서비스 요청서' } ] },
-  { name: '스타키', forms: [{ name: '귓속형 주문서' }, { name: '이어몰드 주문서' }, { name: '반품 요청서' }, { name: '수리 요청서' }] },
-  { name: '오티콘 (디만트)', forms: [{ name: '귓속형 주문서' }, { name: '귀걸이형 주문서' }, { name: '정부지원 주문서' }, { name: '반품 의뢰 신청서' }, { name: '수리의뢰서' }] },
-  { name: '포낙 / 유니트론', forms: [{ name: '귓속형 주문서' }, { name: 'RIC·BTE 주문서' }, { name: '반품 의뢰서' }, { name: '수리 주문서' }] },
-  { name: 'WSA (시그니아·와이덱스)', forms: [{ name: '시그니아 귓속형 주문서' }, { name: '시그니아 오픈형·귀걸이형 주문서' }, { name: '반품 요청서' }, { name: '수리 요청서' }, { name: '와이덱스 수리 의뢰서' }] },
+    { id: 'gn_ite', name: '귓속형 주문서' }, { id: 'gn_bte', name: '귀걸이형 주문서' },
+    { id: 'gn_return', name: '반품사유서' }, { id: 'gn_service', name: '서비스(수리) 요청서' } ] },
+  { name: '스타키', forms: [
+    { id: 'sk_ite', name: '귓속형 주문서' }, { id: 'sk_mold', name: '이어몰드 주문서' },
+    { id: 'sk_return', name: '반품 요청서' }, { id: 'sk_repair', name: '수리 요청서' } ] },
+  { name: '오티콘 (디만트)', forms: [
+    { id: 'ot_ite', name: '귓속형 주문서' }, { id: 'ot_bte', name: '귀걸이형 주문서' }, { id: 'ot_gov', name: '정부지원 주문서' },
+    { id: 'ot_return', name: '반품 의뢰 신청서' }, { id: 'ot_repair', name: '수리의뢰서' } ] },
+  { name: '포낙 / 유니트론', forms: [
+    { id: 'ph_ite', name: '귓속형(ITE) 주문서' }, { id: 'ph_ricbte', name: 'RIC·BTE 주문서' },
+    { id: 'ph_return', name: '반품 의뢰서' }, { id: 'ph_repair', name: '수리 주문서' } ] },
+  { name: 'WSA (시그니아·와이덱스)', forms: [
+    { id: 'ws_sig_ite', name: '시그니아 귓속형 주문서' }, { id: 'ws_sig_bte', name: '시그니아 오픈형·귀걸이형 주문서' },
+    { id: 'ws_return', name: '반품 요청서' }, { id: 'ws_repair', name: '수리 요청서' }, { id: 'ws_widex_repair', name: '와이덱스 수리 의뢰서' } ] },
 ];
+// 수리 서식 고정 문구 (사장님 요청 2026-10-21) — 수리 서식의 특이사항/요청 칸 init 으로 씀
+const REPAIR_NOTE = '수리비 발생 시 진행 전에 전화 주세요. (010-5559-6640)\n기기 상태 전반 점검도 함께 부탁드립니다.';
 
 const FORMS = {
   gn_ite: {

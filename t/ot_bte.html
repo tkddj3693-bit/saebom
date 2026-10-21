@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>귀걸이형 주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+body{font-size:7.4pt}
+:root{--mg:#c8215c;--dark:#45484d;--mid:#8c9095;--line:#b5b9be}
+.page{background:#e7e8ea;padding:7mm 9mm 7mm}
+.top{display:flex;align-items:flex-start;gap:3mm;margin-bottom:2mm}
+.logo{font-size:21pt;font-weight:700;color:#3a3d42;letter-spacing:-0.5pt;line-height:1}
+.title{white-space:nowrap;font-size:22pt;font-weight:900;color:var(--mg);line-height:1;margin-top:3mm;letter-spacing:-0.4pt}
+.title span{font-size:13pt;font-weight:700;margin-left:1.5mm;vertical-align:3pt}
+.title span b{display:inline-block;width:0.9pt;height:11pt;background:var(--mg);margin-right:1.8mm;vertical-align:-1pt}
+.kind{flex:none;width:52mm;background:#6b6e73;border-radius:2.5mm;color:#fff;padding:1.5mm 3mm;font-weight:700;font-size:8pt;line-height:1.75;margin-top:1mm}
+.kind .cb{border-color:#fff}
+.kind .opt{margin-right:0;display:inline-block;width:22mm}
+.mfr{width:56mm;margin-left:auto}
+.mfr .cap{text-align:center;font-size:7.5pt;margin-bottom:0.6mm}
+.mfr table{background:#fff;border-radius:2mm;overflow:hidden}
+.mfr th{background:var(--mid);color:#fff;border:none;border-right:0.6pt dashed #fff;padding:0.6mm}
+.mfr td{height:12mm;border:none;border-right:0.6pt dashed #aaa}
+.mfr th:last-child,.mfr td:last-child{border-right:none}
+.sec{display:flex;background:#fff;border-radius:2.5mm;overflow:hidden;margin-bottom:1.6mm;border:0.5pt solid #a5aab0}
+.lab{width:5.5mm;flex:none;background:var(--mg);color:#fff;font-weight:700;font-size:7.6pt;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:0.5pt}
+.lab.dk{background:var(--dark)}
+.body{flex:1;min-width:0}
+.body table td,.body table th{border:0.5pt solid var(--line);padding:0.4mm 1mm}
+.body table{border-style:hidden}
+th.mg{background:var(--mg);color:#fff;font-weight:700;font-size:8pt;text-align:center}
+th.h{background:var(--dark);color:#fff;font-weight:700;font-size:8pt;text-align:center}
+th.s{background:var(--mid);color:#fff;font-weight:500;text-align:center}
+.vl{display:block;white-space:nowrap;line-height:1.32}
+.sq{display:inline-block;width:2.2mm;height:2.2mm;background:#fff;vertical-align:-0.2mm;margin:0 0.5mm 0 1mm}
+.row{display:flex;gap:1.6mm}
+.info td{border:none!important;border-bottom:0.5pt solid var(--line)!important;padding:0.8mm 1.5mm;height:6.6mm}
+.info tr:last-child td{border-bottom:none!important}
+.k{font-size:7.8pt;white-space:nowrap;width:16mm;letter-spacing:2pt}
+.lt{font-weight:700;color:var(--mg);white-space:nowrap}
+.ind{padding-left:1.5mm}
+.foot{display:flex;justify-content:space-between;color:#333;font-size:7.2pt;bottom:5mm;left:9mm;right:9mm}
+.foot b{font-weight:700}
+.mlab{width:8mm;flex:none;background:var(--dark);color:#fff;font-weight:700;font-size:7.6pt;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15;text-align:center}
+.mlab span{font-size:6pt;margin-top:2mm;line-height:1.5;white-space:nowrap}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head>
+<body><div class="page">
+
+<div class="top">
+  <div>
+    <div class="logo">oticon</div>
+    <div class="title">Order Form<span><b></b>귀걸이형 주문서</span></div>
+  </div>
+  <div class="kind">
+    <span class="opt"><span class="cb"></span>BTE</span><span class="opt"><span class="cb"></span>RITE</span><br>
+    <span class="opt"><span class="cb"></span>이어몰드</span><span class="opt"><span class="cb"></span>수면몰드</span><br>
+    <span class="opt"><span class="cb"></span>수영몰드</span><span class="opt"><span class="cb"></span>소음방지몰드</span>
+  </div>
+  <div class="mfr">
+    <div class="cap">〈 제조회사용 〉</div>
+    <table><tr><th>접수</th><th>완료</th><th>취소</th></tr><tr><td></td><td></td><td></td></tr></table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="sec" style="flex:1"><div class="lab">고객정보</div><div class="body">
+    <table class="info">
+      <tr><td class="k">거 래 처</td><td style="width:50mm"><span class="fill">새봄보청기(수원)</span></td><td class="k">전화번호</td><td style="width:30mm"></td><td class="k" style="width:14mm;letter-spacing:0">생년월일</td><td></td></tr>
+      <tr><td class="k">고 객 명</td><td></td><td class="k">주 소</td><td colspan="3"></td></tr>
+      <tr><td class="k">주 문 일</td><td></td><td colspan="4"></td></tr>
+      <tr><td class="k">납 품 일</td><td></td><td colspan="4">보청기 사용 경험 : &nbsp;&nbsp;<span class="cb"></span>유 &nbsp;&nbsp;&nbsp;&nbsp;<span class="cb"></span>무</td></tr>
+    </table>
+  </div></div>
+  <div class="sec" style="width:40mm;flex:none"><div class="lab">보청기보조금</div><div class="body" style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5mm;font-size:8.5pt">
+    <div class="c">보장구 급여비<br>신청 여부</div>
+    <div style="font-size:11pt"><span class="cb" style="width:4mm;height:4mm"></span>신청</div>
+  </div></div>
+</div>
+
+<div class="sec"><div class="body">
+  <table>
+    <tr><th class="mg" colspan="11">청력검사표</th><th class="mg" colspan="3" style="border-left:1.5pt solid #fff">WRS</th></tr>
+    <tr><th class="s" style="width:7mm"></th><th class="s">125</th><th class="s">250</th><th class="s">500</th><th class="s">1K</th><th class="s">1.5K</th><th class="s">2K</th><th class="s">3K</th><th class="s">4K</th><th class="s">6K</th><th class="s">8K</th><th class="s" style="width:6mm;border-left:1.5pt solid #fff"></th><th class="s" style="width:17mm"></th><th class="s" style="width:17mm"></th></tr>
+    <tr style="height:6.4mm"><th class="s">L</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th class="s" style="border-left:1.5pt solid #fff">L</th><td class="r"><span data-f="wLdb" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>dB</td><td class="r"><span data-f="wLpc" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>%</td></tr>
+    <tr style="height:6.4mm"><th class="s">R</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><th class="s" style="border-left:1.5pt solid #fff">R</th><td class="r"><span data-f="wRdb" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>dB</td><td class="r"><span data-f="wRpc" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>%</td></tr>
+  </table>
+</div></div>
+
+<div class="sec"><div class="body">
+  <table>
+    <tr><th class="h" colspan="5">BTE(RITE)</th></tr>
+    <tr style="height:6.4mm"><td class="lt" style="width:22mm">LT(제품명)</td><td style="width:40mm"></td><td class="lt" style="width:14mm">Ser No.</td><td style="width:42mm"></td><td style="white-space:nowrap"><b class="lt">Color</b> &nbsp;<span class="opt"><span class="cb"></span>STG</span><span class="opt"><span class="cb"></span>CBE</span><span class="opt"><span class="cb"></span>DBL</span></td></tr>
+    <tr style="height:6.4mm"><td class="lt">RT(제품명)</td><td></td><td class="lt">Ser No.</td><td></td><td style="white-space:nowrap"><b class="lt">Color</b> &nbsp;<span class="opt"><span class="cb"></span>STG</span><span class="opt"><span class="cb"></span>CBE</span><span class="opt"><span class="cb"></span>DBL</span></td></tr>
+    <tr style="height:6.4mm"><td colspan="4" class="r" style="font-weight:700">배터리</td><td><span class="opt"><span class="cb"></span>10</span><span class="opt"><span class="cb"></span>312</span><span class="opt"><span class="cb"></span>13</span><span class="opt"><span class="cb"></span>675</span></td></tr>
+  </table>
+</div></div>
+
+<div class="row">
+<!-- 왼쪽: BTE + 소음방지 + 수면 + 수영 -->
+<div style="width:90mm;flex:none">
+  <div class="sec"><div class="body">
+    <table>
+      <tr><th class="h">BTE</th></tr>
+      <tr style="height:6mm"><td class="c"><span class="cb"></span>ㄱ자 튜브</td></tr>
+      <tr><th class="s">이어팁</th></tr>
+      <tr style="height:6mm"><td class="c"><span class="opt" style="margin-right:14mm"><span class="cb"></span>대</span><span class="opt" style="margin-right:14mm"><span class="cb"></span>중</span><span class="opt"><span class="cb"></span>소</span></td></tr>
+    </table>
+    <div style="display:flex;border-top:0.5pt solid var(--line)">
+      <div class="mlab">이<br>어<br>몰<br>드<span><span class="cb" style="width:2.4mm;height:2.4mm;margin-right:0.6mm;vertical-align:-0.3mm"></span>LT<br><span class="cb" style="width:2.4mm;height:2.4mm;margin-right:0.6mm;vertical-align:-0.3mm"></span>RT</span></div>
+      <div class="body"><table>
+        <tr><th class="s">재질</th><th class="s">형태</th><th class="s">벤트</th><th class="s">옵션</th></tr>
+        <tr><td class="c"><span class="cb"></span>Hard</td>
+          <td><span class="vl"><span class="cb"></span>Canal</span><span class="vl"><span class="cb"></span>Canal lock</span><span class="vl"><span class="cb"></span>Half shell</span><span class="vl"><span class="cb"></span>Full shell</span><span class="vl"><span class="cb"></span>Skeleton</span><span class="vl"><span class="cb"></span>CI open</span></td>
+          <td><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0 mm</span><span class="vl"><span class="cb"></span>1.4 mm</span><span class="vl"><span class="cb"></span>2.4 mm</span><span class="vl"><span class="cb"></span>제조사권장</span></td>
+          <td><span class="vl"><span class="cb"></span>손잡이(PH)</span><span class="vl ind">├<span class="cb"></span>Short</span><span class="vl ind">├<span class="cb"></span>Standard</span><span class="vl ind">├<span class="cb"></span>Long</span><span class="vl ind">└<span class="cb"></span>Ring</span></td></tr>
+        <tr><td class="c"><span class="cb"></span>Soft</td>
+          <td><span class="vl"><span class="cb"></span>Canal</span><span class="vl"><span class="cb"></span>Half shell</span><span class="vl"><span class="cb"></span>Full shell</span></td>
+          <td><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0 mm</span></td>
+          <td><span class="cb"></span>Gold Grip</td></tr>
+      </table></div>
+    </div>
+  </div></div>
+
+  <div class="row">
+    <div class="sec" style="flex:1"><div class="body">
+      <table>
+        <tr><th class="mg" colspan="3">소음방지몰드 ( <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>LT <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>RT )</th></tr>
+        <tr><th class="s">HP 00</th><th class="s">HP 01</th><th class="s">HP 02</th></tr>
+        <tr style="height:6.5mm"><td class="c" style="white-space:nowrap"><span class="cb"></span>Canal 형</td><td class="c" style="white-space:nowrap"><span class="cb"></span>Half shell 형</td><td class="c" style="white-space:nowrap"><span class="cb"></span>뮤지션용</td></tr>
+      </table>
+    </div></div>
+    <div class="sec" style="width:18mm;flex:none"><div class="body">
+      <table>
+        <tr><th class="mg">수면몰드</th></tr>
+        <tr><td style="height:10.5mm;line-height:1.7"><span class="cb"></span>LT<br><span class="cb"></span>RT</td></tr>
+      </table>
+    </div></div>
+  </div>
+
+  <div class="sec" style="margin-bottom:0"><div class="body">
+    <table>
+      <tr><th class="mg" colspan="3">수영몰드 ( <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>LT <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>RT )</th></tr>
+      <tr><th class="s">아쿠아가드 색상</th><th class="s">케이스 색상</th><th class="s">옵션</th></tr>
+      <tr><td><span class="vl"><span class="cb"></span>YELLOW</span><span class="vl"><span class="cb"></span>BLUE</span><span class="vl"><span class="cb"></span>RED</span><span class="vl"><span class="cb"></span>ORANGE</span><span class="vl"><span class="cb"></span>GREEN</span></td>
+        <td style="vertical-align:top"><span class="vl"><span class="cb"></span>YELLOW</span><span class="vl"><span class="cb"></span>BLUE</span><span class="vl"><span class="cb"></span>RED</span><span class="vl"><span class="cb"></span>WHITE</span></td>
+        <td class="c"><span class="cb"></span>분실방지용 줄</td></tr>
+    </table>
+  </div></div>
+</div>
+
+<!-- 오른쪽: RITE -->
+<div style="flex:1;min-width:0">
+  <div class="sec" style="margin-bottom:0;height:100%"><div class="body">
+    <table>
+      <tr><th class="h" colspan="5">RITE</th></tr>
+      <tr><th class="s" colspan="5">리시버</th></tr>
+      <tr><td class="lt" rowspan="2" style="width:8mm">LT</td><td><span class="cb"></span>60</td><td><span class="cb"></span>85(M)</td><td><span class="cb"></span>100(P)</td><td><span class="cb"></span>105</td></tr>
+      <tr><td><span class="cb"></span>1</td><td><span class="cb"></span>2</td><td><span class="cb"></span>3</td><td><span class="cb"></span>4</td></tr>
+      <tr><td class="lt" rowspan="2">RT</td><td><span class="cb"></span>60</td><td><span class="cb"></span>85(M)</td><td><span class="cb"></span>100(P)</td><td><span class="cb"></span>105</td></tr>
+      <tr><td><span class="cb"></span>1</td><td><span class="cb"></span>2</td><td><span class="cb"></span>3</td><td><span class="cb"></span>4</td></tr>
+    </table>
+    <table>
+      <tr><th class="h" colspan="6">miniBTE</th></tr>
+      <tr><th class="s" colspan="6">Corda miniFit thin Tube 0.9</th></tr>
+      <tr><td class="lt" style="width:8mm">LT</td><td><span class="cb"></span>0</td><td><span class="cb"></span>1</td><td><span class="cb"></span>2</td><td><span class="cb"></span>3</td><td><span class="cb"></span>4</td></tr>
+      <tr><td class="lt">RT</td><td><span class="cb"></span>0</td><td><span class="cb"></span>1</td><td><span class="cb"></span>2</td><td><span class="cb"></span>3</td><td><span class="cb"></span>4</td></tr>
+      <tr><td colspan="6" class="tiny" style="line-height:1.25">*Thin tube(얇은 튜브) 체크 시, Dome 필수 체크 &nbsp;** Hook(후크) 사용 시, 이어몰드 필수 체크</td></tr>
+    </table>
+    <table>
+      <tr><th class="h" colspan="2">DOME</th></tr>
+      <tr><td style="width:19mm"><span class="cb"></span>Open</td><td><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span></td></tr>
+      <tr><td><span class="cb"></span>Power</td><td><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span><span class="opt"><span class="cb"></span>12mm</span></td></tr>
+      <tr><td style="white-space:nowrap"><span class="cb"></span>Bass(<span class="cb"></span>S <span class="cb"></span>D)</td><td><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span><span class="opt"><span class="cb"></span>12mm</span></td></tr>
+      <tr><td><span class="cb"></span>Open Bass</td><td style="white-space:nowrap;font-size:6.9pt"><span class="opt" style="margin-right:2mm"><span class="cb"></span>5mm</span><span class="opt" style="margin-right:2mm"><span class="cb"></span>6mm</span><span class="opt" style="margin-right:2mm"><span class="cb"></span>8mm</span><span class="opt" style="margin-right:2mm"><span class="cb"></span>10mm</span><span class="opt" style="margin-right:0"><span class="cb"></span>12mm</span></td></tr>
+      <tr><td><span class="cb"></span>Grip Tip</td><td style="font-size:6.9pt">벤트(<span class="cb"></span>No vent <span class="cb"></span>Vent[2.4mm])<br>방향(<span class="cb"></span>L <span class="cb"></span>R) &nbsp;크기(<span class="cb"></span>S <span class="cb"></span>L)</td></tr>
+    </table>
+    <div style="display:flex;border-top:0.5pt solid var(--line)">
+      <div class="mlab">이<br>어<br>몰<br>드<span><span class="cb" style="width:2.4mm;height:2.4mm;margin-right:0.6mm;vertical-align:-0.3mm"></span>LT<br><span class="cb" style="width:2.4mm;height:2.4mm;margin-right:0.6mm;vertical-align:-0.3mm"></span>RT</span></div>
+      <div class="body"><table>
+        <tr><th class="s">재질</th><th class="s">형태</th><th class="s">벤트</th><th class="s">옵션</th></tr>
+        <tr><td><span class="vl"><span class="cb"></span>Hard</span><span class="vl ind">├<span class="cb"></span>폐쇄형</span><span class="vl ind">└<span class="cb"></span>라이트팁</span></td>
+          <td><span class="vl"><span class="cb"></span>Micro</span><span class="vl"><span class="cb"></span>Canal</span><span class="vl"><span class="cb"></span>Canal lock</span><span class="vl"><span class="cb"></span>Skeleton</span></td>
+          <td><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0 mm</span><span class="vl"><span class="cb"></span>1.4 mm</span></td>
+          <td rowspan="3"><span class="vl"><span class="cb"></span>손잡이(PH)</span><span class="vl ind">├<span class="cb"></span>Short</span><span class="vl ind">├<span class="cb"></span>Standard</span><span class="vl ind">├<span class="cb"></span>Long</span><span class="vl ind">└<span class="cb"></span>Ring</span></td></tr>
+        <tr><td><span class="cb"></span>Power</td><td><span class="cb"></span>Canal</td><td><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0 mm</span></td></tr>
+        <tr><td><span class="vl"><span class="cb"></span>MicroShell</span><span class="ind" style="padding-left:4mm">Detect</span></td><td><span class="cb"></span>Canal</td><td><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0 mm</span></td></tr>
+        <tr><th class="s" style="background:var(--dark)">색상</th><td colspan="3" style="white-space:nowrap"><span class="opt" style="margin-right:2.5mm"><span class="cb"></span>베이지</span><span class="opt" style="margin-right:2.5mm"><span class="cb"></span>빨강</span><span class="opt" style="margin-right:2.5mm"><span class="cb"></span>파랑</span><span class="opt" style="margin-right:2.5mm"><span class="cb"></span>검정</span><span class="opt" style="margin-right:0"><span class="cb"></span>투명</span></td></tr>
+      </table></div>
+    </div>
+  </div></div>
+</div>
+</div>
+<div class="tiny r" style="margin:0.6mm 0 1mm">*MicroShell Detect는 인텐트 이상 제품에 선택 가능하며, 리시버 100,105에만 적용 가능. 색상 선택은 MicroShell Detect에만 해당</div>
+
+<div class="sec"><div class="body">
+  <table>
+    <tr><th class="mg" colspan="4">Accessory</th></tr>
+    <tr style="height:11mm">
+      <td style="width:42mm"><b>인텐트 전용</b><br><span class="opt"><span class="cb"></span>스마트충전기</span><span class="opt" style="margin-right:0"><span class="cb"></span>일반충전기</span></td>
+      <td style="width:62mm;white-space:nowrap"><span class="opt"><span class="cb"></span>스마트충전기</span><span class="opt"><span class="cb"></span>일반충전기</span><span style="display:inline-block;vertical-align:middle;line-height:1.3"><span class="cb"></span>miniRITE R<br><span class="cb"></span>miniBTE R</span></td>
+      <td style="white-space:nowrap"><span class="opt"><span class="cb"></span>TV 어댑터3.0</span><span class="opt"><span class="cb"></span>커넥클립</span><span class="opt"><span class="cb"></span>리모컨3.0</span><span class="opt"><span class="cb"></span>에듀마이크</span></td>
+      <td style="white-space:nowrap;line-height:1.35"><span class="cb"></span>312A<br><span class="cb"></span>13A<br><span class="cb"></span>충전형 배터리</td>
+    </tr>
+  </table>
+  <div class="tiny r" style="padding:0.3mm 1.5mm;background:#e7e8ea">*충전 전용 제품은 시리우스(Intent) / 폴라리스 R(Real) / 폴라리스(More, Zircon, Play PX) / 뷔룩스 S(Opn S, Ruby) 입니다</div>
+</div></div>
+
+<div class="row">
+  <div class="sec" style="width:88mm;flex:none;margin-bottom:0"><div class="body">
+    <table>
+      <tr><th class="h" colspan="2">함께보내시는 물품에 체크</th></tr>
+      <tr style="height:7.5mm"><td style="border-right:none"><span class="cb"></span>보청기 (수량: <span data-f="q1" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td><td style="border-left:none"><span class="cb"></span>부속품 (수량: <span data-f="q2" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td></tr>
+      <tr style="height:7.5mm"><td style="border-right:none"><span class="cb"></span>귓본 &nbsp;&nbsp;&nbsp;(수량: <span data-f="q3" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td><td style="border-left:none"><span class="cb"></span>기타 &nbsp;&nbsp;&nbsp;(수량: <span data-f="q4" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td></tr>
+      <tr><td colspan="2" class="tiny">* 주의 : 동봉한 건에 대해 체크 하지 않은 경우, 당사는 책임을 지지 않음을 알려드립니다.</td></tr>
+    </table>
+  </div></div>
+  <div class="sec" style="flex:1;margin-bottom:0"><div class="body">
+    <table>
+      <tr><th class="h" colspan="2">의뢰사항</th></tr>
+      <tr><td style="width:24mm;border-right:none;vertical-align:top;padding-top:1.2mm"><span class="cb"></span>전화 요망</td>
+        <td style="border-left:none;line-height:1.55;padding:0.8mm 1mm">┌<span class="cb"></span>품질기술팀<br>├<span class="cb"></span>CS팀(청각 및 제품)<br>└<span class="cb"></span>CS팀(주문, 출고)</td></tr>
+      <tr style="height:5.5mm"><td colspan="2" style="border-top:0.5pt dashed var(--line)"></td></tr><tr style="height:5.5mm"><td colspan="2" style="border-top:0.5pt dashed var(--line)"></td></tr>
+    </table>
+  </div></div>
+</div>
+
+<div class="foot"><span>서울특별시 중구 서소문로 99 서영빌딩 3층~8층 &nbsp;&nbsp; <b>OTM-P-701-04(5)</b></span><span><b>TEL : 02-2022-3999</b> &nbsp;&nbsp;&nbsp; <b>FAX : 02-2022-3939</b></span></div>
+</div></body></html>

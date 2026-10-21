@@ -1,0 +1,82 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>WIDEX 보청기 수리 의뢰서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root { --dk:#585858; }
+body { font-size: 11.5pt; }
+.page { padding: 12mm 14mm 10mm; }
+.tl { display:flex; justify-content:space-between; font-size:11pt; margin-bottom:1.5mm; }
+.tl .no { border-bottom:0.7pt solid #333; width:38mm; }
+.hd { background:var(--dk); color:#fff; display:flex; align-items:center; height:21mm; padding:0 7mm; border-bottom:1.5mm solid #bdbdbd; }
+.hd .logo { line-height:1.1; width:52mm; }
+.hd .logo b { font-size:20pt; font-weight:900; letter-spacing:1pt; }
+.hd .logo small { display:block; font-size:6.5pt; letter-spacing:0.6pt; }
+.hd h1 { font-size:24pt; font-weight:700; letter-spacing:1pt; }
+table.main { border:1pt solid #555; }
+td { border:0.6pt solid #777; padding:0 2.5mm; height:11mm; }
+.k { background:var(--dk); color:#fff; text-align:center; font-weight:500; letter-spacing:2.5mm; white-space:nowrap; padding:0 1mm 0 3.5mm; }
+.k.ns { letter-spacing:0; padding:0 1.5mm; }
+.bar { background:var(--dk); color:#fff; text-align:center; letter-spacing:3mm; height:10mm; border-bottom:1.3mm solid #bdbdbd; font-size:12pt; }
+.cb { width:4.4mm; height:4.4mm; vertical-align:-0.9mm; margin-right:1.6mm; }
+.items td { vertical-align:top; padding:3mm 4mm; line-height:2.15; height:auto; }
+.shell td { vertical-align:middle; }
+.lr { display:inline-block; background:#555; color:#fff; font-size:9pt; padding:0 1.4mm; line-height:1.4; margin-bottom:1mm; }
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+<div class="tl"><span>No. <span class="no" style="display:inline-block"></span></span><span>보관용</span></div>
+<div class="hd"><div class="logo"><b>WIDEX</b><small>SOUND LIKE NO OTHER</small></div><h1>보청기 수리 의뢰서</h1></div>
+
+<table class="main" style="table-layout:fixed">
+  <colgroup><col style="width:17%"><col style="width:30%"><col style="width:16%"><col style="width:13%"><col style="width:9%"><col style="width:15%"></colgroup>
+  <tr><td class="k">고객명</td><td></td><td class="k">생년월일</td><td></td><td class="k ns">성별</td><td class="nw" style="white-space:nowrap"><span class="cb"></span>남 <span class="cb"></span>여</td></tr>
+  <tr><td class="k" rowspan="2">의뢰처</td><td rowspan="2"><span class="fill">새봄보청기(수원)</span></td><td class="k">의뢰일</td><td colspan="3">20<span data-f="qY" style="display:inline-block;width:9mm;text-align:center;"></span>.<span data-f="qM" style="display:inline-block;width:9mm;text-align:center;"></span>.<span data-f="qD" style="display:inline-block;width:9mm;text-align:center;"></span>.</td></tr>
+  <tr><td class="k ns">도착예정일</td><td colspan="3">20<span data-f="aY" style="display:inline-block;width:9mm;text-align:center;"></span>.<span data-f="aM" style="display:inline-block;width:9mm;text-align:center;"></span>.<span data-f="aD" style="display:inline-block;width:9mm;text-align:center;"></span>.</td></tr>
+  <tr><td class="k ns">주문 담당자</td><td></td><td class="k">연락처</td><td colspan="3"><span class="fill">010-5559-6640</span></td></tr>
+</table>
+<table class="main" style="table-layout:fixed; margin-top:1.5mm">
+  <colgroup><col style="width:33.3%"><col style="width:33.3%"><col></colgroup>
+  <tr><td class="bar">모델명</td><td class="bar" style="letter-spacing:0.5mm">제품번호(SN)</td><td class="bar">방향</td></tr>
+  <tr><td style="height:13mm"></td><td></td><td class="c"><span class="cb"></span>R &nbsp; &nbsp; &nbsp; &nbsp; <span class="cb"></span>L</td></tr>
+</table>
+<table class="main items" style="table-layout:fixed; margin-top:1.5mm">
+  <tr><td class="bar" colspan="4" style="padding:0">수리항목</td></tr>
+  <tr><td><span class="cb"></span>작동 안됨<br><span class="cb"></span>기기 점검<br><span class="cb"></span>FITTING 불량<br><span class="cb"></span>DOOR 불량</td>
+      <td><span class="cb"></span>간헐적 중단<br><span class="cb"></span>귀지 막힘<br><span class="cb"></span>HOOK 불량<br><span class="cb"></span>잡음</td>
+      <td><span class="cb"></span>침수<br><span class="cb"></span>피드백 발생<br><span class="cb"></span>손잡이<br><span class="cb"></span>소리 약함</td>
+      <td><span class="cb"></span>코팅<br><span class="cb"></span>기타</td></tr>
+</table>
+<table class="main items shell" style="table-layout:fixed; margin-top:1.5mm">
+  <colgroup><col style="width:21%"><col style="width:21%"><col></colgroup>
+  <tr><td class="bar" colspan="3" style="padding:0; letter-spacing:1mm">SHELL</td></tr>
+  <tr><td style="vertical-align:top"><span class="cb"></span>통증<br><span class="cb"></span>파손<br><span class="cb"></span>헐거움<br><span class="cb"></span>VENT</td>
+      <td style="vertical-align:top"><span class="cb"></span>방향 교체<br><span class="cb"></span>피드백 발생<br><span class="cb"></span>사용자 변경<br><span class="cb"></span>기타</td>
+      <td style="padding:2.5mm 4mm; line-height:1">
+        <div style="display:flex; justify-content:space-around">
+          <div><span class="lr">L</span><br><img src="img/WSA_widex_shell_L.png" style="width:43mm"></div>
+          <div><span class="lr">R</span><br><img src="img/WSA_widex_shell_R.png" style="width:45mm"></div>
+        </div></td></tr>
+</table>
+<table class="main" style="margin-top:1.5mm">
+  <tr><td class="bar" style="padding:0">비고</td></tr>
+  <tr><td style="height:50mm;vertical-align:top;padding-top:3mm"></td></tr>
+</table>
+</div></body></html>

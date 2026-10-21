@@ -1,0 +1,137 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>시그니아 오픈형·귀걸이형 보청기 / 이어몰드 주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root { --hd:#e4e4e6; --line:#555; }
+body { font-size: 8.3pt; }
+.top { display:flex; align-items:center; justify-content:space-between; height:14mm; }
+.top .tag { font-size:11.5pt; }
+.top h1 { font-size:15pt; font-weight:700; letter-spacing:0.3pt; }
+.logo { text-align:center; line-height:1; }
+.logo .mark { display:inline-block; width:9.5mm; height:9.5mm; border-radius:50%; background:#1d1d1f; color:#fff; font-weight:700; font-size:14pt; line-height:9.5mm; font-style:italic; }
+.logo .word { font-size:11.5pt; font-weight:500; letter-spacing:0.5pt; }
+h2 { font-size:10.5pt; font-weight:700; margin:1.6mm 0 0.8mm; }
+h2 small { font-size:7.5pt; font-weight:400; }
+td, th { border-color: var(--line); padding: 0.9mm 1.4mm; }
+.box { border:1pt solid #333; }
+.gh { background: var(--hd); font-weight:700; text-align:center; }
+.sub { background:#d6d6d8; font-weight:500; text-align:center; font-size:7.8pt; width:13mm; }
+.lab { font-weight:500; white-space:nowrap; }
+.sp { letter-spacing: 3.2mm; }
+.aud td { text-align:center; padding:1mm 0.4mm; height:6.5mm; }
+.opt { margin-right:2.4mm; }
+.nw { white-space:nowrap; }
+.dashv { border-left:0.6pt dashed #888 !important; }
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+
+<div class="top">
+  <div class="tag">[제조사용]</div>
+  <h1>오픈형 &amp; 귀걸이형 보청기 / 이어몰드 주문서</h1>
+  <div class="logo"><div class="mark">s</div><div class="word">signia</div></div>
+</div>
+
+<h2>고객 정보</h2>
+<table class="box">
+  <tr><td style="width:50%"><span class="lab sp">센터명</span>: <span class="fill">새봄보청기(수원)</span></td>
+      <td><span class="lab">주 문 접 수 일 :</span> <span data-f="rY" style="display:inline-block;width:14mm;text-align:center;"></span>년<span data-f="rM" style="display:inline-block;width:12mm;text-align:center;"></span>월<span data-f="rD" style="display:inline-block;width:12mm;text-align:center;"></span>일</td></tr>
+  <tr><td><span class="lab sp">고객명</span>: <span data-f="nm" style="margin-left:1mm"></span></td>
+      <td><span class="lab">본사 출고 요청일 :</span> <span data-f="sY" style="display:inline-block;width:12mm;text-align:center;"></span>년<span data-f="sM" style="display:inline-block;width:12mm;text-align:center;"></span>월<span data-f="sD" style="display:inline-block;width:12mm;text-align:center;"></span>일</td></tr>
+  <tr><td><span class="lab sp">나이</span>: <span data-f="age" style="display:inline-block;width:20mm;text-align:center;"></span><span style="margin-left:2mm">성 별 :</span> <span class="opt"><span class="cb"></span>남</span><span class="opt"><span class="cb"></span>여</span></td>
+      <td><span class="lab">전화 상담 요청 :</span> <span class="cb"></span>전화 상담을 원하시면 체크해 주십시오.</td></tr>
+  <tr><td><span class="lab">보청기 사용 경험 :</span> <span style="margin-left:18mm" class="opt"><span class="cb"></span>유</span><span class="opt" style="margin-left:6mm"><span class="cb"></span>무</span></td>
+      <td><span class="lab">상담 요청 연락처 :</span> <span class="fill">010-5559-6640</span></td></tr>
+</table>
+<table class="box aud" style="border-top:0">
+  <tr><td style="width:6%"></td><td>250Hz</td><td>500Hz</td><td>1KHz</td><td>2KHz</td><td>4KHz</td><td>6KHz</td><td style="border-right:1pt solid #333">8KHz</td>
+      <td style="width:6%"></td><td>250Hz</td><td>500Hz</td><td>1KHz</td><td>2KHz</td><td>4KHz</td><td>6KHz</td><td>8KHz</td></tr>
+  <tr><td>L(좌)</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="border-right:1pt solid #333"></td>
+      <td>R(우)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>제품 선택</h2>
+<div style="display:flex; gap:0; align-items:flex-start">
+  <table class="box" style="width:50%"><tr><td class="gh" style="width:22%">제 품 명</td><td style="height:7.5mm"></td></tr></table>
+  <table class="box" style="width:50%">
+    <tr><td class="gh" style="width:20%">제품 색상</td><td colspan="3" style="height:7mm"></td></tr>
+    <tr><td class="gh">주문 수량</td><td class="nw" colspan="3"><span class="cb"></span>L (<span data-f="qL" style="display:inline-block;width:9mm;text-align:center;"></span>) &nbsp; &nbsp; <span class="cb"></span>R (<span data-f="qR" style="display:inline-block;width:9mm;text-align:center;"></span>) &nbsp; &nbsp; <span class="cb"></span>충전기 업그레이드</td></tr>
+  </table>
+</div>
+
+<h2>RIC 선택 사항</h2>
+<table class="box" style="table-layout:fixed">
+  <colgroup><col style="width:14%"><col style="width:37%"><col style="width:13%"><col style="width:8%"><col style="width:28%"></colgroup>
+  <tr><td class="gh" style="background:#d0d0d2">리시버 3.0</td><td class="nw"><span class="opt"><span class="cb"></span>이어몰드 3.0</span><span class="opt"><span class="cb"></span>HP커스텀</span><span class="tiny">(* IX / AX 사용)</span></td>
+      <td class="gh" rowspan="2">방향<br>길이</td><td class="c lab">L(좌)</td><td class="nw"><span class="opt"><span class="cb"></span>0</span><span class="opt"><span class="cb"></span>1</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>4</span><span class="opt"><span class="cb"></span>5</span></td></tr>
+  <tr><td class="gh">출 력</td><td><span class="opt"><span class="cb"></span>S</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>M</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>P</span></td>
+      <td class="c lab">R(우)</td><td class="nw"><span class="opt"><span class="cb"></span>0</span><span class="opt"><span class="cb"></span>1</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>4</span><span class="opt"><span class="cb"></span>5</span></td></tr>
+  <tr><td class="gh">슬리브 3.0</td><td><span class="opt"><span class="cb"></span>벤트</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>클로즈</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>파워</span><br><span class="opt"><span class="cb"></span>XS</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>S</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>M</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>L</span></td>
+      <td class="gh">클릭 슬리브 2.0</td><td colspan="2"><span class="opt"><span class="cb"></span>벤트</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>클로즈</span><br><span class="opt"><span class="cb"></span>XS</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>S</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>M</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>L</span></td></tr>
+  <tr><td class="gh" rowspan="2">이어팁 3.0</td>
+      <td style="padding:0"><table><tr><td class="sub" style="border:0">오픈</td><td style="border:0"><span class="opt"><span class="cb"></span>5mm</span><span class="opt"><span class="cb"></span>7mm</span><span class="opt"><span class="cb"></span>10mm</span></td></tr></table></td>
+      <td class="gh" rowspan="2">클릭 돔 2.0</td>
+      <td colspan="2" rowspan="2" style="padding:0">
+        <table>
+          <tr><td class="sub" style="border:0; border-bottom:0.6pt solid #999">오픈</td><td style="border:0; border-bottom:0.6pt solid #999"><span class="opt"><span class="cb"></span>4mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span></td></tr>
+          <tr><td class="sub" style="border:0; border-bottom:0.6pt solid #999">세미오픈</td><td style="border:0; border-bottom:0.6pt solid #999"><span class="cb"></span><span class="tiny">*</span> 단일 사이즈</td></tr>
+          <tr><td class="sub" style="border:0; border-bottom:0.6pt solid #999">클로즈</td><td style="border:0; border-bottom:0.6pt solid #999"><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span></td></tr>
+          <tr><td class="sub" style="border:0">더블</td><td style="border:0"><span class="opt"><span class="cb"></span>8/10mm</span><span class="opt"><span class="cb"></span>10/12mm</span></td></tr>
+        </table></td></tr>
+  <tr><td style="padding:0"><table><tr><td class="sub" style="border:0">튤립</td><td style="border:0"><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>12mm</span></td></tr></table></td></tr>
+  <tr><td class="gh" rowspan="2">벤 트</td><td rowspan="2" class="nw"><span class="opt"><span class="cb"></span>벤트 없음</span><span class="opt"><span class="cb"></span>1.3mm</span><span class="opt"><span class="cb"></span>1.6mm</span><span class="opt"><span class="cb"></span>제조사 권장</span></td>
+      <td class="gh">커널 길이</td><td colspan="2"><span class="opt"><span class="cb"></span>짧게</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>중간</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>길게</span></td></tr>
+  <tr><td class="gh">손잡이</td><td colspan="2"><span class="opt"><span class="cb"></span>5mm</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>7mm</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>10mm</span></td></tr>
+</table>
+
+<h2>BTE 선택 사항 (이어후크 / 튜브)</h2>
+<table class="box" style="table-layout:fixed">
+  <colgroup><col style="width:14%"><col style="width:37%"><col style="width:13%"><col style="width:36%"></colgroup>
+  <tr><td colspan="4" style="background:#f2f2f3"><span class="gh" style="padding:0.4mm 2mm; background:#d0d0d2">이어후크</span> <span class="small">(*아래의 이어몰드 제작옵션을 선택해주세요.)</span></td></tr>
+  <tr><td class="gh">방향</td><td><span class="opt"><span class="cb"></span>왼쪽</span><span class="opt" style="margin-left:6mm"><span class="cb"></span>오른쪽</span></td>
+      <td class="gh">커널길이</td><td><span class="opt"><span class="cb"></span>짧게</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>중간</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>길게</span></td></tr>
+  <tr><td class="gh">재질</td><td><span class="opt"><span class="cb"></span>하드</span><span class="opt" style="margin-left:6mm"><span class="cb"></span>소프트</span></td>
+      <td class="gh">벤트<br><span class="tiny" style="font-weight:400">(*하드 재질만 해당)</span></td><td><span class="opt"><span class="cb"></span>벤트없음</span><span class="opt"><span class="cb"></span>1.3mm</span><span class="opt"><span class="cb"></span>1.6mm</span><span class="opt"><span class="cb"></span>제조사권장</span></td></tr>
+  <tr><td class="gh">형태</td><td><span class="opt" style="width:16mm"><span class="cb"></span>ITC</span><span class="opt" style="width:20mm"><span class="cb"></span>half shell</span><span class="opt"><span class="cb"></span>full shell</span><br><span class="opt" style="width:16mm"><span class="cb"></span>skeleton</span><span class="opt" style="width:20mm"><span class="cb"></span>스위밍</span><span class="opt"><span class="cb"></span>귀마개</span></td>
+      <td class="gh">기타</td><td><span class="opt"><span class="cb"></span>손잡이</span><span class="opt"><span class="cb"></span>L자 튜브 <span class="tiny">(*하드 재질만 해당)</span></span><span class="opt"><span class="cb"></span>커널락</span></td></tr>
+  <tr><td colspan="4" style="background:#f2f2f3"><span class="gh" style="padding:0.4mm 2mm; background:#d0d0d2">튜 브</span> <span class="small">(*씬튜브 주문 시 별도의 금액 발생 / 씬튜브 3.0: 모션 C&amp;G X P, 인투이스4 P만 가능)</span></td></tr>
+  <tr><td class="gh">씬튜브3.0 굵기</td><td><span class="opt"><span class="cb"></span>0.9mm</span><span class="opt"><span class="cb"></span>1.4mm</span><br><span class="tiny">(*굵기 미선택시, 기존의 씬튜브로 출고)</span></td>
+      <td class="gh">방향/길이</td><td class="nw">L(좌) &nbsp;<span class="opt"><span class="cb"></span>0</span><span class="opt"><span class="cb"></span>1</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>4</span><br>R(우) &nbsp;<span class="opt"><span class="cb"></span>0</span><span class="opt"><span class="cb"></span>1</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>4</span></td></tr>
+  <tr><td class="gh" rowspan="2">이어팁 3.0</td>
+      <td style="padding:0"><table><tr><td class="sub" style="border:0">오픈</td><td style="border:0"><span class="opt"><span class="cb"></span>5mm</span><span class="opt"><span class="cb"></span>7mm</span><span class="opt"><span class="cb"></span>10mm</span></td></tr></table></td>
+      <td class="gh" rowspan="2">슬리브 3.0</td>
+      <td rowspan="2"><span class="opt"><span class="cb"></span>벤트</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>클로즈</span><span class="opt" style="margin-left:4mm"><span class="cb"></span>파워</span><br><span class="opt"><span class="cb"></span>XS</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>S</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>M</span><span class="opt" style="margin-left:5mm"><span class="cb"></span>L</span></td></tr>
+  <tr><td style="padding:0"><table><tr><td class="sub" style="border:0">튤립</td><td style="border:0"><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>12mm</span></td></tr></table></td></tr>
+</table>
+
+<h2>액세서리 <small>*충전기 어댑터/케이블 미포함 (재고 소진 시까지만 동봉 출고)</small></h2>
+<table class="box small" style="table-layout:fixed">
+  <colgroup><col style="width:10%"><col style="width:10%"><col></colgroup>
+  <tr><td class="gh" colspan="2">오디오 스트리밍 / 리모컨</td><td><span class="opt" style="width:30mm"><span class="cb"></span>TV Sound</span><span class="opt" style="width:38mm"><span class="cb"></span>스트림라인 마이크</span><span class="opt"><span class="cb"></span>미니포켓</span></td></tr>
+  <tr><td class="gh" rowspan="4">충전기</td><td class="gh">RIC</td><td><span class="cb"></span>포터블 충전기</td></tr>
+  <tr><td class="gh">CIC</td><td><span class="opt" style="width:42mm"><span class="cb"></span>인시오 C&amp;G IX</span><span class="opt"><span class="cb"></span>실크 C&amp;G 차저</span></td></tr>
+  <tr><td class="gh">스탠다드</td><td class="nw tiny"><span class="cb"></span>차저 RIC (퓨어 C&amp;G IX / AX 전용) &nbsp; <span class="cb"></span>차저 BTE P (모션 C&amp;G P IX 전용) &nbsp; <span class="cb"></span>차저 BTE SP (모션 C&amp;G SP IX 전용)</td></tr>
+  <tr><td class="gh" style="font-size:7pt">드라이앤클린</td><td class="nw tiny"><span class="cb"></span>D&amp;C차저 RIC (퓨어 C&amp;G IX / AX 전용) &nbsp; <span class="cb"></span>D&amp;C차저 BTE P (모션 C&amp;G P IX 전용) &nbsp; <span class="cb"></span>D&amp;C차저 BTE SP (모션 C&amp;G SP IX 전용)</td></tr>
+  <tr><td class="gh" colspan="2">크로스</td><td class="nw tiny"><span class="cb"></span>퓨어 C&amp;G BCT IX (BCT 전용) &nbsp; <span class="cb"></span>퓨어C&amp;G IX &nbsp; <span class="cb"></span>스타일레토 IX &nbsp; <span class="cb"></span>실크 C&amp;G IX &nbsp; <span class="cb"></span>퓨어 312 AX &nbsp; <span class="cb"></span>스타일레토 AX</td></tr>
+</table>
+<table class="box" style="margin-top:1.8mm"><tr><td style="height:23mm; vertical-align:top"><b style="font-size:10pt">특이사항/메모</b><div data-f="memo" style="margin-top:1mm"></div></td></tr></table>
+
+</div></body></html>

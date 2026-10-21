@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>정부지원 보청기 주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+body{font-size:7.4pt}
+.page{background:#e9ebed;padding:6mm 9mm 7mm}
+:root{--blue:#46769c;--dark:#555b62;--mid:#8d939a;--na:#c3c7cb;--line:#b3b9bf}
+.top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.8mm}
+.badge{display:inline-block;border:1.2pt solid var(--blue);color:var(--blue);border-radius:1.5mm;padding:0.6mm 1.6mm;font-weight:900;font-size:9pt;line-height:1.05;text-align:center}
+.badge small{display:block;font-size:6pt;font-weight:700;color:#333;margin-top:0.6mm}
+.title{font-size:22pt;font-weight:900;color:var(--blue);letter-spacing:-0.5pt;line-height:1}
+.title span{font-size:14pt;font-weight:700;color:var(--blue);margin-left:2mm;vertical-align:3pt}
+.title span b{display:inline-block;width:0.9pt;height:12pt;background:var(--blue);margin-right:2mm;vertical-align:-1pt}
+.mfr{width:66mm}
+.mfr .cap{text-align:center;font-size:7.5pt;margin-bottom:0.8mm}
+.mfr table{background:#fff;border-radius:2mm;overflow:hidden}
+.mfr th{background:var(--mid);color:#fff;border:none;border-right:0.6pt dashed #fff;padding:0.8mm}
+.mfr td{height:7mm;border:none;border-right:0.6pt dashed #aaa}
+.mfr th:last-child,.mfr td:last-child{border-right:none}
+.sec{display:flex;background:#fff;border-radius:2.5mm;overflow:hidden;margin-bottom:1.4mm;border:0.5pt solid #a7aeb5}
+.lab{width:5.5mm;flex:none;background:var(--blue);color:#fff;font-weight:700;font-size:7.6pt;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:0.5pt}
+.body{flex:1;min-width:0}
+.body table td,.body table th{border:0.5pt solid var(--line);padding:0.3mm 1mm}
+.body table{border-style:hidden}
+th.h{background:var(--dark);color:#fff;font-weight:700;font-size:7.8pt;text-align:center}
+th.s{background:var(--mid);color:#fff;font-weight:500;text-align:center}
+th.band{background:#4a4e53;color:#fff;font-weight:700;font-size:8pt;text-align:center}
+td.na{background:var(--na);color:#555;text-align:center}
+td.g{background:#d4d7da;text-align:center}
+.lr{font-weight:700;color:var(--blue);text-align:center;font-size:8pt}
+.vl{display:block;white-space:nowrap;line-height:1.3}
+.dot{display:inline-block;width:3.2mm;height:3.2mm;border-radius:50%;vertical-align:-0.6mm;margin-right:1mm;border:0.5pt solid #555}
+.sq{display:inline-block;width:2.2mm;height:2.2mm;background:#555;vertical-align:-0.2mm;margin:0 0.5mm 0 1mm}
+.row{display:flex;gap:1.8mm}
+.info td{border:none!important;border-bottom:0.5pt solid var(--line)!important;padding:0.7mm 1.5mm;height:5mm}
+.info tr:last-child td{border-bottom:none!important}
+.info .k{width:20mm;font-size:7.8pt}
+.ear td{border:none!important}
+.foot{color:#333;font-size:7.2pt;display:flex;justify-content:space-between;bottom:5mm;left:9mm;right:9mm}
+.foot b{font-weight:900}
+.bte{font-size:6.8pt}
+.bte .cb{width:2.6mm;height:2.6mm;margin-right:0.6mm}
+.bte .opt{margin-right:1.4mm}
+.bte .vl{line-height:1.25}
+.bte td.sz{font-size:6.3pt;letter-spacing:-0.15pt;white-space:nowrap}
+.bte td.sz .opt{margin-right:0.9mm}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+<style>[data-f="sband"] .fv{font-size:6.6pt;font-weight:700}</style>
+</head>
+<body><div class="page">
+
+<div class="top">
+  <div style="display:flex;align-items:flex-end;gap:3mm">
+    <div class="badge">정부<br>지원<br>보청기<small>주문서</small></div>
+    <div class="title">Order Form<span><b></b>정부지원 보청기 주문서</span></div>
+  </div>
+  <div class="mfr">
+    <div class="cap">〈 제조회사용 〉</div>
+    <table><tr><th>접수</th><th>완료</th><th>취소</th></tr><tr><td></td><td></td><td></td></tr></table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="sec" style="flex:1"><div class="lab">고객정보</div><div class="body">
+    <table class="info">
+      <tr><td class="k">거래처</td><td style="width:62mm"><span class="fill">새봄보청기(수원)</span></td><td class="k">생년월일</td><td></td></tr>
+      <tr><td class="k">고객명</td><td></td><td class="k">전화번호</td><td></td></tr>
+      <tr><td class="k">주문일</td><td></td><td class="k">주소</td><td></td></tr>
+      <tr><td class="k">납품일</td><td></td><td class="k" colspan="2">보청기 사용 경험 : &nbsp;&nbsp;&nbsp; 유 <span class="cb"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 무 <span class="cb"></span></td></tr>
+    </table>
+  </div></div>
+  <div class="sec" style="width:40mm"><div class="lab">보청기보조금</div><div class="body" style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5mm;font-size:8.5pt">
+    <div class="c">보장구 급여비<br>신청 여부</div>
+    <div><span class="cb"></span>신청</div>
+  </div></div>
+</div>
+
+<div class="sec"><div class="body">
+  <table>
+    <tr><th class="band" colspan="13" style="background:var(--blue)">청력검사표</th></tr>
+    <tr><th class="h" style="width:9mm"></th><th class="h">125</th><th class="h">250</th><th class="h">500</th><th class="h">1K</th><th class="h">1.5K</th><th class="h">2K</th><th class="h">3K</th><th class="h">4K</th><th class="h">6K</th><th class="h">8K</th><th class="h" colspan="2">WRS</th></tr>
+    <tr style="height:5mm"><th class="s">L</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r" style="width:18mm"><span data-f="wLdb" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>dB</td><td class="r" style="width:18mm"><span data-f="wLpc" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>%</td></tr>
+    <tr style="height:5mm"><th class="s">R</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="r"><span data-f="wRdb" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>dB</td><td class="r"><span data-f="wRpc" style="display:inline-block;min-width:8mm;text-align:center;margin-right:1mm"></span>%</td></tr>
+  </table>
+</div></div>
+
+<!-- 귓속형 -->
+<div class="sec"><div class="lab">귓속형</div><div class="body">
+  <table>
+    <tr><th class="h" colspan="2">제품명</th><th class="h">쉘 형태</th><th class="h">Faceplate</th><th class="h">Shell Color</th><th class="h">Canal</th><th class="h">RH(손잡이)</th><th class="h">Venting</th></tr>
+    <tr>
+      <td class="lr" style="width:9mm;height:10mm">LT</td><td></td>
+      <td rowspan="2" style="width:33mm"><span class="opt"><span class="cb"></span>IIC</span><span class="opt"><span class="cb"></span>IIC P</span><span class="opt"><span class="cb"></span>CIC</span><br><span class="opt"><span class="cb"></span>CIC P</span><span class="opt"><span class="cb"></span>ITC(312A)</span><div class="tiny" style="margin-top:1.2mm">* 개인의 귀 모양에 따라 크기가 차이가 날 수 있습니다.</div></td>
+      <td rowspan="2" style="width:25mm"><span class="vl"><span class="cb"></span>Beige</span><span class="vl"><span class="cb"></span>Light Brown*</span><span class="vl"><span class="cb"></span>Medium Brown*</span><span class="vl"><span class="cb"></span>Dark Brown*</span><span class="vl"><span class="cb"></span>Black(IIC)</span></td>
+      <td rowspan="2" style="width:34mm"><div style="display:flex;gap:1.5mm"><div><span class="vl"><span class="cb"></span>Beige</span><span class="vl"><span class="cb"></span>Blue</span><span class="vl"><span class="cb"></span>Red</span><span class="vl"><span class="cb"></span>Clear</span><span class="vl"><span class="cb"></span>Black</span></div><div><span class="vl"><span class="cb"></span>Light Brown*</span><span class="vl"><span class="cb"></span>Medium Brown*</span><span class="vl"><span class="cb"></span>Dark Brown*</span><span class="vl"><span class="cb"></span>White*</span></div></div></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>Short</span><span class="vl"><span class="cb"></span>Standard</span><span class="vl"><span class="cb"></span>Long</span></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>Short</span><span class="vl"><span class="cb"></span>Standard</span><span class="vl"><span class="cb"></span>Long</span><span class="vl"><span class="cb"></span>Ring</span></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>C.1.0mm</span><span class="vl"><span class="cb"></span>C.1.4mm</span><span class="vl"><span class="cb"></span>C.2.4mm</span><span class="vl"><span class="cb"></span>제조사권장</span></td>
+    </tr>
+    <tr><td class="lr" style="height:10mm">RT</td><td></td></tr>
+    <tr><td colspan="3" style="border-top:none"></td><td colspan="5" class="tiny" style="padding:0.4mm 1mm">* 특수 색상은 맞춤 제작으로 유상 진행되며, 제작에는 영업일 기준 7일 소요됩니다.</td></tr>
+  </table>
+  <table>
+    <tr><th class="band" colspan="12">귓속형 세부선택사항</th></tr>
+    <tr><th class="s" rowspan="2" style="width:30mm">형태</th><th class="s" rowspan="2">NFMI<br><span class="tiny">(양이통신)</span></th><th class="s" rowspan="2">WL<br><span class="tiny">(무선통신)</span></th><th class="s" colspan="3">Fitting Level(피팅레벨)</th><th class="s" colspan="2">PB</th><th class="s" colspan="2">VC</th><th class="s" colspan="2">텔레코일(TC)</th></tr>
+    <tr><th class="s">75</th><th class="s">90</th><th class="s">100</th><th class="s">L</th><th class="s">R</th><th class="s">L</th><th class="s">R</th><th class="s">L</th><th class="s">R</th></tr>
+    <tr style="height:4.3mm"><td class="c">IIC</td><td class="na">N/A</td><td class="na">N/A</td><td></td><td></td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td></tr>
+    <tr style="height:4.3mm"><td class="c">CIC</td><td></td><td class="na">N/A</td><td></td><td></td><td class="na">N/A</td><td></td><td></td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td><td class="na">N/A</td></tr>
+    <tr style="height:4.3mm"><td class="c">ITC(312)</td><td class="g">탑재</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="tiny r" style="padding:0.4mm 1.5mm;background:#e9ebed">*텔레코일은 PB 추가 필수 / 텔레코일과 블루투스 동시 사용 불가</div>
+</div></div>
+
+<!-- 귀걸이형 -->
+<div class="sec"><div class="lab">귀걸이형</div><div class="body">
+  <table>
+    <tr><th class="h" colspan="2">제품명</th><th class="h">시리얼 번호</th><th class="h" colspan="3">색상</th></tr>
+    <tr style="height:5.2mm"><td class="lr" style="width:9mm">LT</td><td style="width:44mm"></td><td style="width:44mm"></td><td class="c"><span class="cb"></span><span class="dot" style="background:#5a5c5f"></span>진회색</td><td class="c"><span class="cb"></span><span class="dot" style="background:#c9bfae"></span>베이지색</td><td class="c"><span class="cb"></span><span class="dot" style="background:#222"></span>검정색</td></tr>
+    <tr style="height:5.2mm"><td class="lr">RT</td><td></td><td></td><td class="c"><span class="cb"></span><span class="dot" style="background:#5a5c5f"></span>진회색</td><td class="c"><span class="cb"></span><span class="dot" style="background:#c9bfae"></span>베이지색</td><td class="c"><span class="cb"></span><span class="dot" style="background:#222"></span>검정색</td></tr>
+  </table>
+  <table class="bte" style="table-layout:fixed">
+    <colgroup><col style="width:9mm"><col style="width:17.5mm"><col style="width:17.5mm"><col style="width:14mm"><col style="width:46mm"><col style="width:19mm"><col style="width:27mm"><col style="width:16mm"><col></colgroup>
+    <tr><th class="band" colspan="9">귀걸이형 세부선택사항</th></tr>
+    <tr><th class="s" rowspan="2" style="width:11mm">형태</th><th class="s" colspan="2">리시버</th><th class="s" colspan="2" rowspan="2">이어돔 ( <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>L <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>R )</th><th class="s" colspan="4">이어몰드 ( <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>L <span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>R )</th></tr>
+    <tr><th class="s"><span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>LT</th><th class="s"><span class="cb" style="width:2.6mm;height:2.6mm;margin:0 0.6mm 0 1mm"></span>RT</th><th class="s">재질</th><th class="s">형태</th><th class="s">벤트</th><th class="s">옵션</th></tr>
+    <!-- RITE -->
+    <tr>
+      <td class="c" rowspan="6" style="font-weight:700;color:var(--blue)">RITE<br><span class="tiny" style="color:var(--blue)">(오픈형)</span></td>
+      <td rowspan="5" style="font-size:6.6pt">출력 :<span class="vl"><span class="cb"></span>85 <span class="cb"></span>100</span><span class="vl"><span class="cb"></span>105</span>길이 :<span class="vl"><span class="cb"></span>1 <span class="cb"></span>2 <span class="cb"></span>3</span><span class="vl"><span class="cb"></span>4 <span class="cb"></span>5*</span><span style="font-size:5.6pt;letter-spacing:-0.3pt;white-space:nowrap;display:block">(*B시리즈만 가능)</span></td>
+      <td rowspan="5" style="font-size:6.6pt">출력 :<span class="vl"><span class="cb"></span>85 <span class="cb"></span>100</span><span class="vl"><span class="cb"></span>105</span>길이 :<span class="vl"><span class="cb"></span>1 <span class="cb"></span>2 <span class="cb"></span>3</span><span class="vl"><span class="cb"></span>4 <span class="cb"></span>5*</span><span style="font-size:5.6pt;letter-spacing:-0.3pt;white-space:nowrap;display:block">(*B시리즈만 가능)</span></td>
+      <td><span class="cb"></span>Open</td><td class="sz"><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>OtoTherm</span><span style="padding-left:4mm">(유상)</span><span class="vl"><span class="cb"></span>Hard</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>폐쇄형</span><span class="vl" style="padding-left:1.5mm">└<span class="cb"></span>라이트 팁</span></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>Micro</span><span class="vl"><span class="cb"></span>Canal</span><span class="vl"><span class="cb"></span>Canal lock</span><span class="vl"><span class="cb"></span>Skeleton(only Hard)</span></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0mm</span><span class="vl"><span class="cb"></span>1.4mm</span></td>
+      <td rowspan="5"><span class="vl"><span class="cb"></span>손잡이(RH)</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>Short</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>Standard</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>Long</span><span class="vl" style="padding-left:1.5mm">└<span class="cb"></span>Ring</span></td>
+    </tr>
+    <tr><td><span class="cb"></span>Power</td><td class="sz"><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span><span class="opt"><span class="cb"></span>12mm</span></td></tr>
+    <tr><td><span class="cb"></span>Bass<br><span style="white-space:nowrap">(<span class="cb"></span>S <span class="cb"></span>D)</span></td><td class="sz"><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span><span class="opt"><span class="cb"></span>12mm</span></td>
+      <td><span class="cb"></span>Power</td><td><span class="cb"></span>Canal</td><td><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0mm</span></td></tr>
+    <tr><td><span class="cb"></span>Open Bass</td><td class="sz" style="white-space:normal"><span class="opt"><span class="cb"></span>5mm</span><span class="opt"><span class="cb"></span>6mm</span><span class="opt"><span class="cb"></span>8mm</span><span class="opt"><span class="cb"></span>10mm</span><span class="opt"><span class="cb"></span>12mm</span></td>
+      <td rowspan="2"><span class="vl"><span class="cb"></span>MicroShell</span><span style="padding-left:4mm">Detect</span></td><td rowspan="2"><span class="cb"></span>Canal</td><td rowspan="2"><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0mm</span></td></tr>
+    <tr><td><span class="cb"></span>Grip Tip</td><td style="font-size:6.8pt">방향(<span class="cb"></span>L <span class="cb"></span>R) 크기(<span class="cb"></span>S <span class="cb"></span>L)<br>벤트(<span class="cb"></span>No vent <span class="cb"></span>Vent[2.4mm])</td></tr>
+    <tr><td colspan="4" class="tiny" style="padding:0.4mm 1mm;line-height:1.25">마이크로쉘 디텍트는 B500 제품이 선택 가능하며, 리시버100, 105에만 적용 가능, 색상 선택은 마이크로쉘 디텍트에만 해당</td>
+      <td colspan="4" style="white-space:nowrap">색상 &nbsp;<span class="opt"><span class="cb"></span>베이지</span><span class="opt"><span class="cb"></span>빨강</span><span class="opt"><span class="cb"></span>파랑</span><span class="opt"><span class="cb"></span>검정</span><span class="opt"><span class="cb"></span>투명</span></td></tr>
+    <!-- BTE -->
+    <tr>
+      <td class="c" rowspan="2" style="font-weight:700;color:var(--blue)">BTE<br><span class="tiny" style="color:var(--blue)">(귀걸이형)</span></td>
+      <td colspan="2" rowspan="2" class="na">N/A</td>
+      <td colspan="2" rowspan="2"><span class="vl"><span class="cb"></span>ㄱ자 튜브</span>이어팁 : <span class="opt"><span class="cb"></span>대</span><span class="opt"><span class="cb"></span>중</span><span class="opt"><span class="cb"></span>소</span></td>
+      <td><span class="vl"><span class="cb"></span>OtoTherm</span><span style="padding-left:4mm">(유상)</span><span class="vl"><span class="cb"></span>Hard</span></td>
+      <td><span class="vl"><span class="cb"></span>Canal</span><span class="vl"><span class="cb"></span>Canal lock</span><span class="vl"><span class="cb"></span>Half Shell</span><span class="vl"><span class="cb"></span>Full Shell</span><span class="vl"><span class="cb"></span>Skeleton<span class="tiny">(only Hard)</span></span><span class="vl"><span class="cb"></span>CI open<span class="tiny">(only Hard)</span></span></td>
+      <td style="font-size:6.8pt"><span class="vl"><span class="cb"></span>No vent</span><span class="vl"><span class="cb"></span>1.0mm</span><span class="vl"><span class="cb"></span>1.4mm</span><span class="vl"><span class="cb"></span>2.4mm</span><span class="vl"><span class="cb"></span>제조사 권장</span></td>
+      <td><span class="vl"><span class="cb"></span>손잡이(RH)</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>Short</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>Standard</span><span class="vl" style="padding-left:1.5mm">├<span class="cb"></span>Long</span><span class="vl" style="padding-left:1.5mm">└<span class="cb"></span>Ring</span></td>
+    </tr>
+    <tr><td><span class="cb"></span>Soft</td><td><span class="vl"><span class="cb"></span>Canal</span><span class="vl"><span class="cb"></span>Half Shell</span><span class="vl"><span class="cb"></span>Full Shell</span></td><td><span class="cb"></span>No vent</td><td><span class="cb"></span>Gold Grip<br><span style="padding-left:4mm">(유상)</span></td></tr>
+  </table>
+</div></div>
+
+<div class="row">
+  <div class="sec" style="flex:1"><div class="lab">골도형</div><div class="body">
+    <table>
+      <tr><th class="h" colspan="3">제품명</th><th class="h" colspan="2">시리얼 번호</th></tr>
+      <tr style="height:5mm"><td colspan="3"></td><td colspan="2"></td></tr>
+      <tr><th class="s" colspan="3">색상</th><th class="s">배터리</th><th class="s">착용 옵션</th></tr>
+      <tr style="height:7mm">
+        <td class="c" style="white-space:nowrap"><span class="cb"></span><span class="dot" style="background:#5a5c5f"></span>진회색</td>
+        <td class="c" style="white-space:nowrap"><span class="cb"></span><span class="dot" style="background:#c9bfae"></span>베이지색</td>
+        <td class="c" style="white-space:nowrap"><span class="cb"></span><span class="dot" style="background:#222"></span>검정색</td>
+        <td style="white-space:nowrap"><span class="cb"></span>312A (일반형)</td>
+        <td style="white-space:nowrap"><span class="vl"><span class="cb"></span>소프트밴드(<span data-f="sband" style="display:inline-block;min-width:8mm;text-align:center"></span>)</span><span class="vl"><span class="cb"></span>사운드커넥터</span></td>
+      </tr>
+    </table>
+  </div></div>
+  <div class="sec" style="width:86mm;flex:none"><div class="body">
+    <table><tr><th class="h" style="background:var(--blue)">이어몰드</th></tr>
+    <tr><td class="ear" style="padding:1mm 1.5mm"><img src="img/oticon_earmold_shapes.png" style="width:100%;display:block"></td></tr></table>
+  </div></div>
+</div>
+
+<div class="row">
+  <div class="sec" style="flex:1"><div class="body">
+    <table>
+      <tr><th class="h" colspan="5" style="background:var(--blue)">급여제품 전용 액세서리</th></tr>
+      <tr style="height:7mm"><td colspan="5" class="c" style="font-size:7pt;white-space:nowrap"><span class="opt"><span class="cb"></span>일반충전기</span><span class="opt"><span class="cb"></span>일반충전기<span class="tiny">(B500 전용)</span></span><span class="opt"><span class="cb"></span>스마트충전기</span><span class="opt" style="margin-right:0"><span class="cb"></span>스마트충전기<span class="tiny">(B500 전용)</span></span></td></tr>
+      <tr style="height:7mm"><td class="c"><span class="cb"></span>TV 어댑터 3.0</td><td class="c"><span class="cb"></span>커넥클립</td><td class="c"><span class="cb"></span>리모컨 3.0</td><td class="c"><span class="cb"></span>에듀마이크</td><td class="c"><span class="cb"></span>크로스</td></tr>
+    </table>
+  </div></div>
+  <div style="width:86mm;flex:none">
+    <div class="sec"><div class="body">
+      <table>
+        <tr><th class="h" colspan="2" style="background:var(--blue)">함께 보내는 물품에 체크</th></tr>
+        <tr style="height:5mm"><td><span class="cb"></span>보청기(수량: <span data-f="q1" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td><td><span class="cb"></span>부속품(수량: <span data-f="q2" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td></tr><tr style="height:5mm"><td><span class="cb"></span>귓본(수량: <span data-f="q3" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td><td><span class="cb"></span>기타(수량: <span data-f="q4" style="display:inline-block;min-width:7mm;text-align:center"></span>)</td></tr>
+        <tr><td colspan="2" class="tiny r" style="font-size:6pt">주의:동봉한 건에 대해 체크 하지 않은 경우, 당사는 책임을 지지 않음을 알려드립니다.</td></tr>
+      </table>
+    </div></div>
+    <div class="sec" style="margin-bottom:0"><div class="lab" style="width:13mm;writing-mode:horizontal-tb;font-size:8pt">의뢰사항</div><div class="body" style="padding:1mm 2.5mm;line-height:1.55">
+      - 전화 요망 &nbsp;&nbsp;<span class="cb"></span>품질기술팀<br>
+      <span class="opt"><span class="cb"></span>CS팀(청각 및 제품)</span><span class="cb"></span>CS(주문, 출고)
+    </div></div>
+  </div>
+</div>
+
+<div class="foot"><span><b>디만트코리아(주)</b> &nbsp; 서울특별시 중구 서소문로 99 서영빌딩3층~8층 &nbsp;&nbsp; <b>TEL : 02-2022-3999</b> &nbsp;&nbsp; <b>FAX : 02-2022-3939</b></span><b>OTM-P-701-12</b></div>
+</div><div id="hiddenOpts" style="display:none"><span class="cb" data-row="IIC"></span><span class="cb" data-row="CIC"></span><span class="cb" data-row="ITC(312)"></span><span class="cb" data-opt="N"></span><span class="cb" data-opt="WL"></span><span class="cb" data-opt="FL75"></span><span class="cb" data-opt="FL90"></span><span class="cb" data-opt="FL100"></span><span class="cb" data-opt="PBL"></span><span class="cb" data-opt="PBR"></span><span class="cb" data-opt="VCL"></span><span class="cb" data-opt="VCR"></span><span class="cb" data-opt="TCL"></span><span class="cb" data-opt="TCR"></span></div>
+<style>.mk{display:inline-block;width:1.2mm;height:2.6mm;border:solid #0b2f6b;border-width:0 0.7mm 0.7mm 0;transform:rotate(45deg);margin-top:-0.8mm}</style>
+<script>
+// 귓속형 세부선택사항 표: 고른 형태 줄의 고른 옵션 칸에 ✓
+(function(){
+  const COLS=['N','WL','FL75','FL90','FL100','PBL','PBR','VCL','VCR','TCL','TCR'];
+  function tag(){
+    const th=[...document.querySelectorAll('th.band')].find(x=>x.textContent.includes('귓속형 세부선택사항')); if(!th) return;
+    th.closest('table').querySelectorAll('tr').forEach(tr=>{
+      const f=tr.querySelector('td.c'); if(!f) return; const rid=f.textContent.trim();
+      let col=0,after=false;
+      [...tr.children].forEach(td=>{ if(td===f){after=true;return;} if(!after) return;
+        const span=+(td.getAttribute('colspan')||1);
+        if(span===1&&!td.classList.contains('na')&&!td.classList.contains('g')){td.dataset.rid=rid;td.dataset.opt=COLS[col];}
+        col+=span; });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',tag); else tag();
+  window.onFill=function(p){
+    const cbs=[...document.querySelectorAll('.cb')]; const on=new Set(p.c);
+    document.querySelectorAll('.mk').forEach(x=>x.remove());
+    const rs=cbs.filter((c,i)=>on.has(i)&&c.dataset.row).map(c=>c.dataset.row);
+    const os=cbs.filter((c,i)=>on.has(i)&&c.dataset.opt).map(c=>c.dataset.opt);
+    rs.forEach(r=>os.forEach(o=>{const td=document.querySelector('td[data-rid="'+r+'"][data-opt="'+o+'"]'); if(td){const k=document.createElement('span');k.className='mk';td.appendChild(k);}}));
+  };
+})();
+</script>
+</body></html>

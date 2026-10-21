@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#2e6b4f">
 <title>새봄 주문서</title>
 <link rel="manifest" href="manifest.json">
@@ -57,15 +58,14 @@ table.aud input{text-align:center;padding:9px 4px}
 .bar button{flex:1;height:54px;border-radius:12px;font-weight:700;font-size:1.05rem}
 .b1{background:#eef1f3}.b2{background:var(--g);color:#fff}
 .clear{display:block;margin:6px auto 0;color:var(--mut);font-size:.9rem;text-decoration:underline;padding:10px}
-#pv{position:fixed;inset:0;background:#3a3f45;z-index:10;display:none;flex-direction:column}
-#pv.show{display:flex}
+#pv{position:fixed;inset:0;background:#3a3f45;z-index:10;display:flex;flex-direction:column}
+#pv:not(.show){left:-30000px;right:auto;width:900px;visibility:hidden;pointer-events:none}
 #pv .top{color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
 #pv .top span{flex:1}
 #pv .wrap{flex:1;overflow:auto;padding:0 10px}
 #pv .bar{position:static}
 #frameBox{transform-origin:0 0;box-shadow:0 2px 12px rgba(0,0,0,.4);background:#fff}
 #frame{width:794px;height:1123px;border:0;display:block;background:#fff}
-#holder{position:fixed;left:-10000px;top:0}
 #busy{position:fixed;inset:0;background:rgba(0,0,0,.45);color:#fff;display:none;align-items:center;justify-content:center;z-index:20;font-size:1.1rem;font-weight:700}
 #busy.show{display:flex}
 .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:20px;font-size:.92rem;z-index:30}
@@ -74,14 +74,18 @@ table.aud input{text-align:center;padding:9px 4px}
 </head>
 <body>
 <div id="app"></div>
-<div id="holder"><div id="frameBox"><iframe id="frame" title="서식 미리보기"></iframe></div></div>
 <div id="pv">
   <div class="top"><button class="back" id="pvClose" style="color:#fff;font-size:1.5rem">‹</button><span>미리보기 — 제조사에 가는 모양이에요</span></div>
-  <div class="wrap" id="pvWrap"></div>
+  <div class="wrap" id="pvWrap"><div id="frameBox"><iframe id="frame" title="서식 미리보기"></iframe></div></div>
   <div class="bar"><button class="b1" id="pvSave">PDF 저장</button><button class="b2" id="pvShare">카톡으로 보내기</button></div>
 </div>
 <div id="busy">PDF 만드는 중…</div>
 <script src="forms.js"></script>
+<script src="forms/gn.js"></script>
+<script src="forms/sk.js"></script>
+<script src="forms/ot.js"></script>
+<script src="forms/ph.js"></script>
+<script src="forms/ws.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

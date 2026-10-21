@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>수리의뢰서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+body{font-size:9.6pt}
+.page{padding:12mm 14mm 10mm}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.addr{font-size:8.6pt;line-height:1.5;color:#333}
+.logo{text-align:right;line-height:1}
+.logo b{font-size:22pt;font-weight:900;color:#2b2d30;letter-spacing:-0.6pt}
+.logo .pf{font-size:7pt;font-weight:700;letter-spacing:0.6pt;margin-top:0.6mm}
+.logo .cu{font-size:8.6pt;letter-spacing:3pt;margin-top:1mm}
+h1{text-align:center;font-size:17pt;font-weight:900;margin:6mm 0 6mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 11mm}
+.info td{border:0.7pt solid #333;height:9.6mm;padding:0 2mm}
+.info td.k{width:20mm;text-align:center;letter-spacing:2pt;white-space:nowrap}
+.tab{display:inline-block;border:0.7pt solid #333;border-bottom:none;padding:1.6mm 3mm;font-weight:700;width:42mm;margin-top:9mm}
+.box{border:0.7pt solid #333}
+.chk{display:grid;padding:1.2mm 1.6mm}
+.chk div{height:10.4mm;display:flex;align-items:center;white-space:nowrap;font-size:9pt}
+.lines div{height:8.0mm;border-bottom:0.7pt solid #333}
+.lines div:last-child{border-bottom:none}
+.send{padding:2.2mm 3mm;font-size:9pt;line-height:1.9}
+.send .note{font-size:7.6pt;line-height:1.5;margin-top:1.2mm}
+.foot{display:grid;grid-template-columns:1fr 1fr 1fr;font-size:8.6pt;color:#222;bottom:9mm;left:14mm;right:14mm}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+<style>[data-f="note"] .fv{line-height:8mm!important;font-size:9.5pt!important}
+[data-f="etc"] .fv{font-size:9.5pt!important}</style>
+</head>
+<body><div class="page">
+
+<div class="top">
+  <div class="addr">서울특별시 중구 서소문동 57-9 서영빌딩 7층,3층(301호)<br>TEL: 02-2022-3999 / FAX: 02-2022-3939</div>
+  <div class="logo"><b>oticon</b><div class="pf">PEOPLE FIRST</div><div class="cu">(고 객 용)</div></div>
+</div>
+
+<h1>REPAIR FORM (수리의뢰서)</h1>
+
+<div class="grid">
+  <table class="info">
+    <tr><td class="k">거 래 처</td><td><span class="fill">새봄보청기(수원)</span></td></tr>
+    <tr><td class="k">고 객 명</td><td></td></tr>
+    <tr><td class="k" style="letter-spacing:0">주민번호</td><td></td></tr>
+    <tr><td class="k">주&nbsp;&nbsp;&nbsp;&nbsp;소</td><td></td></tr>
+    <tr><td class="k" style="letter-spacing:0">전화번호</td><td></td></tr>
+  </table>
+  <table class="info">
+    <tr><td class="k">주 문 일</td><td></td></tr>
+    <tr><td class="k">납 품 일</td><td></td></tr>
+    <tr><td class="k">구 입 일</td><td></td></tr>
+    <tr><td class="k">모&nbsp;&nbsp;&nbsp;&nbsp;델</td><td></td></tr>
+    <tr><td class="k" style="letter-spacing:0">제품번호</td><td></td></tr>
+  </table>
+</div>
+
+<div class="grid">
+  <div>
+    <div class="tab">보청기 상태</div>
+    <div class="box chk" style="grid-template-columns:1fr 1.15fr">
+      <div><span class="cb"></span>소리 안남</div><div><span class="cb"></span>소리 끊김(간헐적 중단)</div>
+      <div><span class="cb"></span>배터리 소모량 많음</div><div><span class="cb"></span>볼륨 조절 불량</div>
+      <div><span class="cb"></span>소리 약함</div><div><span class="cb"></span>스위치/프로그램버튼 불량</div>
+      <div><span class="cb"></span>소리가 울림</div><div><span class="cb"></span>HOOK 불량</div>
+      <div><span class="cb"></span>소리가 찢어짐</div><div><span class="cb"></span>프로그램 연결 불량</div>
+      <div><span class="cb"></span>내부 피드백 발생</div><div><span class="cb"></span>배터리 도어 불량</div>
+      <div><span class="cb"></span>잡음</div><div><span class="cb"></span>점검</div>
+    </div>
+  </div>
+  <div>
+    <div class="tab">Shell 상태</div>
+    <div class="box chk" style="grid-template-columns:1fr 1fr">
+      <div><span class="cb"></span>Shell 파손</div><div><span class="cb"></span>Wax Filter 빠짐</div>
+      <div><span class="cb"></span>Shell 통증</div><div><span class="cb"></span>Face Plate 분리</div>
+      <div><span class="cb"></span>Shell 헐거움</div><div><span class="cb"></span>Vent 빠짐</div>
+      <div><span class="cb"></span>Canal 짧음</div><div></div>
+      <div><span class="cb"></span>Canal 김</div><div></div>
+      <div><span class="cb"></span>손잡이 끊어짐</div><div></div>
+      <div><span class="cb"></span>REC Tube 빠짐</div><div></div>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div>
+    <div class="tab">특이사항</div>
+    <div class="box lines" style="position:relative"><div data-f="note" style="position:absolute;left:2mm;right:2mm;top:0;border:none;height:auto"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+  <div>
+    <div class="box send" style="margin-top:9mm">
+      <b>[함께 보내시는 물품에 체크해 주세요.]</b><br>
+      <span class="opt" style="width:33mm"><span class="cb"></span>보청기(수량: <span data-f="q1" style="display:inline-block;min-width:6mm;text-align:center"></span>)</span><span class="opt"><span class="cb"></span>귓본(수량: <span data-f="q2" style="display:inline-block;min-width:6mm;text-align:center"></span>)</span><br>
+      <span class="opt" style="width:33mm"><span class="cb"></span>부속품(수량: <span data-f="q3" style="display:inline-block;min-width:6mm;text-align:center"></span>)</span><span class="opt"><span class="cb"></span>기타(수량: <span data-f="q4" style="display:inline-block;min-width:6mm;text-align:center"></span>)</span>
+      <div class="note">* 주의: 동봉한 건에 대해 체크하지 않은 경우, 당사는 책임을 지지 않음을 알려드립니다</div>
+    </div>
+    <div class="tab" style="margin-top:6mm">기타 의뢰 사항</div>
+    <div class="box" style="height:33mm;padding:2mm 3mm" data-f="etc"></div>
+  </div>
+</div>
+
+<div class="foot"><span>OTM-P-801-04(1)</span><span class="c">오티콘코리아(주)</span><span class="r">A4(210*297mm)</span></div>
+</div></body></html>

@@ -1,0 +1,129 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+ :root { --or:#e8693a; }
+ .hdr { display:flex; justify-content:space-between; align-items:flex-end; padding: 0 2mm 2mm; border-bottom: 0.8pt solid #555; }
+ .logo b { color:var(--or); font-size: 28pt; font-weight:700; letter-spacing:-1pt; line-height:1; display:block; }
+ .logo span { font-size: 8pt; color:#555; }
+ .ttl { text-align:center; } .ttl b { font-size: 25pt; font-weight:900; letter-spacing: 6pt; display:block; line-height:1.15; }
+ .ttl span { font-size: 10pt; color:#555; }
+ .fax { font-size: 8.5pt; color:#444; line-height:1.5; }
+ .frame { border: 0.8pt solid #555; background:#f4f4f2; margin-top: 2mm; padding: 4mm 4mm 3mm; display:flex; gap: 5mm; height: 258mm; }
+ .col1 { width: 88mm; } .col2 { flex:1; }
+ .box { border: 0.8pt solid #555; background:#fff; padding: 3mm 4mm; }
+ .cap { font-size: 8pt; color:#666; margin-bottom: 2mm; }
+ .fl { display:flex; align-items:flex-end; margin: 2.4mm 0; font-size: 10pt; font-weight:500; }
+ .fl label { width: 20mm; } .fl .v { flex:1; border-bottom: 0.6pt solid #444; height: 5.5mm; padding-left:1mm; }
+ h3 { font-size: 12.5pt; font-weight: 700; margin: 3mm 0 1.2mm; }
+ .mdl { font-size: 10pt; font-weight:700; margin-top: 2.6mm; }
+ .snl { display:flex; align-items:center; gap: 3mm; margin-top: 1mm; font-size: 9pt; }
+ .sn { display:inline-flex; border: 0.6pt solid #555; }
+ .sn i { width: 6.4mm; height: 7mm; border-right: 0.6pt solid #555; background:#fff; }
+ .sn i:last-child { border-right: none; }
+ .sn.blue { border-color:#5aa0b4; } .sn.blue i { border-color:#5aa0b4; }
+ .sn.orange i { background:#fbe1d3; border-color:#d98463; } .sn.orange { border-color:#d98463; }
+ .ret h4 { font-size: 12pt; font-weight:700; margin: 3mm 0 0.5mm; }
+ .ret .note { font-size: 8pt; margin-bottom: 2mm; }
+ .rgrid { display:grid; grid-template-columns: 1fr 1.1fr; row-gap: 2.4mm; font-size: 9pt; }
+ .rgrid .cb { width: 5mm; height: 5mm; vertical-align: middle; margin-right: 1.5mm; }
+ .gt { font-size: 11pt; font-weight:700; margin: 2.5mm 0 1mm; } .gt .en { font-size: 9pt; font-weight:400; color:#444; }
+ .gbox { border: 0; }
+ .ri { display:flex; align-items:center; height: 7.1mm; }
+ .lr { display:inline-flex; border: 0.6pt solid #555; background:#fff; height: 7.1mm; margin-right: 3mm; margin-top:-0.6pt; }
+ .lr span { width: 5.6mm; text-align:center; line-height: 7.1mm; color:#888; font-size: 8.5pt; }
+ .lr span:first-child { border-right: 0.6pt dashed #777; }
+ .rt { font-size: 9.5pt; } .code { color:#999; font-size: 8.5pt; }
+ .detail { border: 0.8pt solid #555; background:#fff; height: 44mm; padding: 1mm 3mm; }
+ .detail div { border-bottom: 0.6pt dashed #888; height: 7mm; font-size: 8pt; color:#aaa; }
+ .foot2 { display:flex; justify-content:space-between; margin-top: 2mm; font-size: 9pt; color:#666; }
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+<style>
+.fl .v .fv{border:none;height:auto;padding:0;flex:none;display:inline}
+.mv .fv{font-size:10pt}
+.lr .cb.lrc{width:5.6mm;height:7.1mm;border:none;margin:0;display:inline-block;vertical-align:top;background:transparent;line-height:7.1mm;text-align:center;color:#888;font-size:8.5pt;position:relative}
+.lr .cb.lrc:first-child{border-right:0.6pt dashed #777}
+.lr .cb.lrc.on{color:#c9d6ea}
+.lr .cb.lrc.on::after{left:1.9mm;top:1.1mm;width:1.4mm;height:3.4mm;border-width:0 0.75mm 0.75mm 0}
+.sn i{position:relative;font-style:normal;text-align:center;line-height:7mm;font-weight:700;color:#0b2f6b;font-size:10.5pt}
+[data-f="detail"] .fv{line-height:7mm!important;font-size:9.5pt!important}
+</style>
+<script>
+window.onFill = function(p){
+  document.querySelectorAll('[data-sn]').forEach(function(box){
+    var v=(p.t[box.dataset.sn]||'').replace(/\s+/g,'');
+    box.querySelectorAll('i').forEach(function(i,n){ i.textContent = v[n]||''; });
+  });
+  var ph=document.querySelector('.detail .ph'); if(ph) ph.style.visibility=(p.t.detail||'').trim()?'hidden':'visible';
+};
+</script>
+</head><body><div class="page">
+<div class="hdr">
+ <div class="logo"><b>GN</b><span>GN Hearing Korea Co., Ltd.</span></div>
+ <div class="ttl"><b>반품사유서</b><span>Return For Credit Form</span></div>
+ <div class="fax">FAX: 02. 501. 1909<br>E-MAIL: krcs03@gnhearing.com</div>
+</div>
+<div class="frame">
+ <div class="col1">
+  <div class="box">
+   <div class="cap">Customer Information</div>
+   <div class="fl"><label>상호명</label><div class="v"><span class="fill">새봄보청기(수원)</span></div></div>
+   <div class="fl"><label>주소_1</label><div class="v"></div></div>
+   <div class="fl"><label>주소_2</label><div class="v"></div></div>
+   <div class="fl"><label>전화번호</label><div class="v"><span class="fill">010-5559-6640</span></div></div>
+  </div>
+  <h3>1. 고객 정보</h3>
+  <div class="box">
+   <div class="cap">Patient's Name</div>
+   <div class="fl"><label>고객명</label><div class="v" data-f="cust"></div></div>
+   <div class="fl"><label>생년월일</label><div class="v" data-f="birth"></div></div>
+  </div>
+  <h3>2. 제품 정보</h3>
+  <div class="box" style="padding-bottom:4mm">
+   <div class="cap">보청기 / Hearing instruments returned</div>
+   <div class="mdl">Left Model : <span data-f="mL" class="mv"></span></div><div class="snl">S/N <span data-f="snL" style="display:none"></span><span class="sn blue" data-sn="snL"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+   <div class="mdl">Right Model : <span data-f="mR" class="mv"></span></div><div class="snl">S/N <span data-f="snR" style="display:none"></span><span class="sn orange" data-sn="snR"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+   <div class="cap" style="margin-top:3.5mm">무선 악세사리 / Wireless Accessories returned</div>
+   <div class="mdl">Model : <span data-f="mA1" class="mv"></span></div><div class="snl">S/N <span data-f="snA1" style="display:none"></span><span class="sn " data-sn="snA1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+   <div class="mdl">Model : <span data-f="mA2" class="mv"></span></div><div class="snl">S/N <span data-f="snA2" style="display:none"></span><span class="sn " data-sn="snA2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+   <div class="mdl">Model : <span data-f="mA3" class="mv"></span></div><div class="snl">S/N <span data-f="snA3" style="display:none"></span><span class="sn " data-sn="snA3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div class="ret"><h4>반품 시 아래 용품을 확인해 주세요.</h4>
+   <div class="note">※ 미반납 시 일정 금액이 청구될 수 있습니다.</div>
+   <div class="rgrid">
+    <div><span class="cb"></span>보청기 <span class="small">Hearing Aids</span></div><div><span class="cb"></span>청소도구 <span class="small">Cleaning Kit</span></div>
+    <div><span class="cb"></span>외장 케이스 <span class="small">Pres. Case</span></div><div><span class="cb"></span>제습통 <span class="small">Cleaning Cup</span></div>
+    <div><span class="cb"></span>내장 케이스 <span class="small">Hard Case</span></div><div><span class="cb"></span>제습용 캡슐 <span class="small">Cleaning Capsules</span></div>
+    <div><span class="cb"></span>배터리 <span class="small">Battery 4cell</span></div><div><span class="cb"></span><span class="small">RIE Receiver Tube</span></div>
+    <div><span class="cb"></span>스타터세트 <span class="small">Starter set</span></div><div><span class="cb"></span>기타 : <span data-f="etcItem" class="mv" style="font-size:8.5pt"></span></div>
+   </div></div>
+ </div>
+ <div class="col2">
+  <h3 style="margin-top:0">3. 반품 사유 <span style="font-size:9pt; font-weight:400">(아래 'ㅁ'에 V체크)</span></h3>
+  <div class="box" style="padding-top:0"><div class="gt">일반적인 사유 <span class="en">General related</span></div><div class="gbox"><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">가격에 비해 낮은 성능 <span class="code">2016</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">경제적 문제 <span class="code">2017</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">이전 보청기를 선호 <span class="code">3001</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">GN Hearing의 다른 제품을 선호 <span class="code">2011</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">경쟁사 제품을 선호 <span class="code">2012</span></span></div></div><div class="gt">사용자 관련 <span class="en">User related</span></div><div class="gbox"><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">사용자 부적응 <span class="code">2009</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">어떠한 효과도 보지 못함 <span class="code">2015</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">건강 악화 <span class="code">2014</span></span></div></div><div class="gt">제품 관련 <span class="en">Product related</span></div><div class="gbox"><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">음질 불만족 <span class="code">2016</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">잡음 <span class="code">3065</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">피드백 <span class="code">3068</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">반복적인 수리 <span class="code">3073</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">소리 울림 <span class="code">3072</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">착용감 (통증, 상처 등) <span class="code">3013</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">사이즈 불만족 (돌출 포함) <span class="code">3020</span></span></div></div><div class="gt">기타 <span class="en">Other &amp; Administrative</span></div><div class="gbox"><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">잘못된 주문 입력 <span class="code">2010</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">잘못 배송된 제품 <span class="code">2000</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">고객의 구매 취소 <span class="code">2013</span></span></div></div><div class="gt">제품 교환 <span class="en">Exchange status (if applicable)</span></div><div class="gbox"><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">제품 교환으로 인한 반품 <span class="code">3035</span></span></div><div class="ri"><span class="lr"><span class="cb lrc">L</span><span class="cb lrc">R</span></span><span class="rt">제품 교환 요청 <span class="code">3035</span></span></div></div>
+   <div class="gt">기타 상세 내용 <span class="en">Other reasons or return details</span></div>
+   <div class="detail" style="position:relative"><span data-f="detail" style="position:absolute;left:3mm;right:3mm;top:1mm;display:block"></span><div class="ph">내용을 상세하게 적어주시기 바랍니다</div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class="small muted" style="margin-top:1mm">자세한 설명은 품질 개선에 큰 도움이 됩니다.</div>
+  </div>
+ </div>
+</div>
+
+</div></body></html>

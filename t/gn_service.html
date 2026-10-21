@@ -1,0 +1,58 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+ :root { --or:#e5583a; --lab:#fbf3e6; }
+ .title { margin: 1mm auto 6mm; width: 128mm; height: 17mm; border-radius: 9mm; background: linear-gradient(#ef7a55,#e14f33); color:#fff; text-align:center; font-size: 27pt; font-weight:900; line-height:17mm; letter-spacing: 2pt; }
+ table.t { border: 1.3pt solid #333; table-layout: fixed; margin-bottom: 5mm; }
+ table.t td { border: 0.6pt solid #777; height: 9.4mm; font-size: 10pt; }
+ td.lab { background: var(--lab); text-align:center; font-weight:500; letter-spacing: 1.5pt; font-size: 10.5pt; }
+ td.lab2 { background: var(--lab); text-align:center; font-weight:500; font-size: 11.5pt; border-right: 1.1pt solid #333; }
+ .items { display:flex; flex-wrap: wrap; padding: 2.5mm 3mm; row-gap: 3.2mm; font-size: 10pt; }
+ .items .opt { margin-right: 5mm; }
+ .ears { display:flex; } .ears img { width: 48%; display:block; margin: 0 auto; }
+ .foot { text-align:right; line-height:1.5; font-size: 8pt; bottom: 7mm; }
+ .gn { position:absolute; left: 10mm; bottom: 7mm; color: var(--or); font-weight: 700; font-size: 15pt; }
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+<div class="title">서비스 요청서</div>
+<table class="t"><colgroup><col style="width:27mm"><col><col style="width:27mm"><col></colgroup>
+<tr><td class="lab" style="letter-spacing:0">주문서 발송일</td><td colspan="3"></td></tr>
+<tr><td class="lab" style="letter-spacing:0">출고요청 일자</td><td colspan="3"></td></tr>
+<tr><td class="lab">업체명</td><td colspan="3" style="padding-left:4mm"><span class="fill">새봄보청기(수원)</span></td></tr>
+<tr><td class="lab">고객명</td><td></td><td class="lab">연락처</td><td style="padding-left:4mm"></td></tr>
+<tr><td class="lab">제품명</td><td></td><td class="lab" style="letter-spacing:0">Serial No.</td><td></td></tr>
+<tr><td class="lab">배송수단</td><td colspan="3" style="padding-left:4mm"><span class="opt"><span class="cb"></span>택배</span><span class="opt"><span class="cb"></span>퀵서비스</span><span class="opt"><span class="cb"></span>고속/KTX</span> <span style="margin-left:4mm; font-size:8pt">※택배를 제외한 다른 배송수단은 유상 배송입니다.</span></td></tr>
+</table>
+<table class="t"><colgroup><col style="width:27mm"><col></colgroup>
+<tr><td class="lab2" style="height:40mm">Repair</td><td><div class="items"><span class="opt"><span class="cb"></span>소리 안남</span><span class="opt"><span class="cb"></span>소리 왜곡</span><span class="opt"><span class="cb"></span>간헐적 작동</span><span class="opt"><span class="cb"></span>소리 약함</span><span class="opt"><span class="cb"></span>소리 울림</span><span class="opt"><span class="cb"></span>페어링/연결</span><span class="opt"><span class="cb"></span>잡음</span><span class="opt"><span class="cb"></span>내부 피드백</span><span class="opt"><span class="cb"></span>배터리 소모량 많음</span><span class="opt"><span class="cb"></span>손잡이</span><span class="opt"><span class="cb"></span>버핑</span><span class="opt"><span class="cb"></span>애딩</span><span class="opt"><span class="cb"></span>배터리 도어 문제</span><span class="opt"><span class="cb"></span>쉘/플레이트 분리</span><span class="opt"><span class="cb"></span>프로그램 오류</span><span class="opt"><span class="cb"></span>쉘 보수</span><span class="opt"><span class="cb"></span>청소 점검</span><span class="opt"><span class="cb"></span>충전기 작동 불량</span><span class="opt"><span class="cb"></span>충전안됨</span></div></td></tr></table>
+<table class="t"><colgroup><col style="width:27mm"><col></colgroup>
+<tr><td class="lab2" style="height:30mm">Remake</td><td><div class="items"><span class="opt"><span class="cb"></span>피드백 발생</span><span class="opt"><span class="cb"></span>Vent 변경</span><span class="opt"><span class="cb"></span>Canal 길이(Long)</span><span class="opt"><span class="cb"></span>Canal 길이(Short)</span><span class="opt"><span class="cb"></span>파손</span><span class="opt"><span class="cb"></span>헐거움</span><span class="opt"><span class="cb"></span>빠짐</span><span class="opt"><span class="cb"></span>빡빡함</span><span class="opt"><span class="cb"></span>착용이 힘듦</span><span class="opt"><span class="cb"></span>보청기 사이즈 문제</span><span class="opt"><span class="cb"></span>방향 변경</span><span class="opt"><span class="cb"></span>옵션 추가/제거</span><span class="opt"><span class="cb"></span>쉘 파손으로 인한 재제작</span></div></td></tr></table>
+<table class="t" style="margin-bottom:0"><colgroup><col style="width:27mm"><col style="width:72mm"><col><col></colgroup>
+<tr><td class="lab2" rowspan="4" style="line-height:1.5">상세<br>기입사항</td><td rowspan="4" style="vertical-align:top; padding:2mm; font-size:8.5pt">※수리비 발생 시 진행 여부 확인 전화 드립니다.<span data-f="detail" style="display:block;margin-top:3mm"></span></td>
+ <td colspan="2" class="c" style="height:9mm"><span class="cb"></span>귀 안/밖 통증 <span style="font-size:8pt">(상세하게 작성해 주시기 바랍니다.)</span></td></tr>
+<tr><td class="c" style="height:8mm">왼쪽</td><td class="c">오른쪽</td></tr>
+<tr><td style="height:58mm; padding:1mm"><img src="img/gn_shell_L.png" style="width:100%; display:block"></td><td style="padding:1mm"><img src="img/gn_shell_R.png" style="width:100%; display:block"></td></tr>
+<tr><td colspan="2" class="c" style="height:8mm; font-size:8.5pt">※상기 이미지에 통증 및 불편사항을 표시해 주시기 바랍니다.</td></tr>
+</table>
+<div class="gn">GN</div>
+<div class="foot"><b style="font-size:9pt">(주)지엔히어링코리아</b> &nbsp;서울 성동구 성수일로 39-34 서울숲 더 스페이스 3층<br>Tel) 02-541-9228 &nbsp;Fax) 02-501-1909 &nbsp;Email) krcs03@gnhearing.com</div>
+</div></body></html>

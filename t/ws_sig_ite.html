@@ -1,0 +1,158 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>시그니아 귓속형 보청기 주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root { --ink:#1d1d1f; --hd:#e4e4e6; --line:#555; }
+body { font-size: 8.6pt; }
+.top { display:flex; align-items:center; justify-content:space-between; height:15mm; }
+.top .tag { font-size:12pt; }
+.top h1 { font-size:17pt; font-weight:700; border:0.8pt solid #999; padding:0.5mm 6mm; letter-spacing:0.5pt; }
+.logo { text-align:center; line-height:1; }
+.logo .mark { display:inline-block; width:10mm; height:10mm; border-radius:50%; background:#1d1d1f; color:#fff; font-weight:700; font-size:15pt; line-height:10mm; font-style:italic; }
+.logo .word { font-size:12pt; font-weight:500; letter-spacing:0.5pt; }
+h2 { font-size:11pt; font-weight:700; margin:1.6mm 0 0.8mm; }
+.opt{margin-right:2.6mm}
+td, th { border-color: var(--line); padding: 0.95mm 1.5mm; }
+.box { border:1pt solid #333; }
+.gh { background: var(--hd); font-weight:700; text-align:center; }
+.lab { font-weight:500; white-space:nowrap; }
+.sp { letter-spacing: 3.2mm; }
+.aud td { text-align:center; padding:1.2mm 0.5mm; height:7mm; }
+.aud .h td { height:6mm; font-size:8pt; }
+.dash td { border-top: 0.6pt dashed #888; }
+.note { font-size:8pt; line-height:1.55; }
+.consent { background:#d4d4d6; padding:2.5mm 3mm; display:flex; align-items:center; gap:3mm; margin-top:2mm; }
+.consent .t { flex:1; font-size:8.4pt; line-height:1.55; }
+.consent table td { background:#fff; height:8mm; }
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+
+<div class="top">
+  <div class="tag">[제조사용]</div>
+  <h1>귓속형 보청기 주문서</h1>
+  <div class="logo"><div class="mark">s</div><div class="word">signia</div></div>
+</div>
+
+<h2>고객 정보</h2>
+<table class="box">
+  <tr><td style="width:50%"><span class="lab sp">센터명</span>: <span class="fill">새봄보청기(수원)</span></td>
+      <td><span class="lab">주 문 접 수 일 :</span> <span data-f="rY" style="display:inline-block;width:14mm;text-align:center;"></span>년<span data-f="rM" style="display:inline-block;width:12mm;text-align:center;"></span>월<span data-f="rD" style="display:inline-block;width:12mm;text-align:center;"></span>일</td></tr>
+  <tr><td><span class="lab sp">고객명</span>: <span data-f="nm" style="margin-left:1mm"></span></td>
+      <td><span class="lab">본사 출고 요청일 :</span> <span data-f="sY" style="display:inline-block;width:12mm;text-align:center;"></span>년<span data-f="sM" style="display:inline-block;width:12mm;text-align:center;"></span>월<span data-f="sD" style="display:inline-block;width:12mm;text-align:center;"></span>일</td></tr>
+  <tr><td><span class="lab sp">나이</span>: <span data-f="age" style="display:inline-block;width:20mm;text-align:center;"></span><span style="margin-left:2mm">성 별 :</span> <span class="opt"><span class="cb"></span>남</span><span class="opt"><span class="cb"></span>여</span></td>
+      <td><span class="lab">전화 상담 요청 :</span> <span class="cb"></span>전화 상담을 원하시면 체크해 주십시오.</td></tr>
+  <tr><td><span class="lab">보청기 사용 경험 :</span> <span style="margin-left:18mm" class="opt"><span class="cb"></span>유</span><span class="opt" style="margin-left:6mm"><span class="cb"></span>무</span></td>
+      <td><span class="lab">상담 요청 연락처 :</span> <span class="fill">010-5559-6640</span></td></tr>
+</table>
+<table class="box aud" style="border-top:0">
+  <tr class="h"><td style="width:6%"></td><td>250Hz</td><td>500Hz</td><td>1KHz</td><td>2KHz</td><td>4KHz</td><td>6KHz</td><td style="border-right:1pt solid #333">8KHz</td>
+      <td style="width:6%"></td><td>250Hz</td><td>500Hz</td><td>1KHz</td><td>2KHz</td><td>4KHz</td><td>6KHz</td><td>8KHz</td></tr>
+  <tr><td>L(좌)</td><td></td><td></td><td></td><td></td><td></td><td></td><td style="border-right:1pt solid #333"></td>
+      <td>R(우)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<h2>제품 선택</h2>
+<table class="box" style="table-layout:fixed">
+  <colgroup><col style="width:14%"><col style="width:27%"><col style="width:11%"><col style="width:26%"><col style="width:10%"><col style="width:12%"></colgroup>
+  <tr><td class="gh">방 향</td>
+      <td><span class="opt"><span class="cb"></span>L(좌)</span><span class="opt"><span class="cb"></span>R(우)</span></td>
+      <td class="gh">마이크옵션</td>
+      <td style="white-space:nowrap"><span class="opt"><span class="cb"></span>Omni</span><span class="opt"><span class="cb"></span>Twin (ITC만 선택가능)</span></td>
+      <td class="gh">무선 통신</td>
+      <td style="white-space:nowrap"><span class="opt"><span class="cb"></span>유</span><span class="opt"><span class="cb"></span>무</span></td></tr>
+  <tr><td class="c lab">INSIO IX C&amp;G</td>
+      <td><span class="opt"><span class="cb"></span>7</span><span class="opt"><span class="cb"></span>5</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>1</span></td>
+      <td colspan="4" rowspan="5" class="note">
+        * <b>IX C&amp;G</b> : CIC만 제작 가능<br>
+        * <b>IX CIC</b> : I3 케이블 사용, MM 선택시 기존 플렉스케이블 사용<br>
+        * <b>AX ITC</b> : 충전형 제품, 블루투스, 트윈마이크, MM/무선 기본 장착<br>
+        * <b>Nx ITC</b> : <span class="cb"></span>비블루투스 <span class="cb"></span>블루투스 (트윈마이크, MM/무선 기본 장착)<br>
+        * <b>Nx IIC</b> : 무선 피팅만 가능 (Conexx Air)<br>
+        * <b>INTUIS 3 / PROMPT</b> : IIC, 트윈마이크 및 무선통신 선택 불가</td></tr>
+  <tr class="dash"><td class="c lab">INSIO IX</td><td><span class="opt"><span class="cb"></span>7</span><span class="opt"><span class="cb"></span>5</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>1</span></td></tr>
+  <tr><td class="c lab">INSIO AX C&amp;G</td><td><span class="opt"><span class="cb"></span>7</span><span class="opt"><span class="cb"></span>5</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>1</span></td></tr>
+  <tr><td class="c lab">INSIO Nx</td><td><span class="opt"><span class="cb"></span>7</span><span class="opt"><span class="cb"></span>5</span><span class="opt"><span class="cb"></span>3</span><span class="opt"><span class="cb"></span>2</span><span class="opt"><span class="cb"></span>1</span></td></tr>
+  <tr><td colspan="2"><span class="opt"><span class="cb"></span>INTUIS 3</span><span class="opt" style="margin-left:8mm"><span class="cb"></span>PROMPT</span></td></tr>
+  <tr><td colspan="7" style="padding:1.5mm 4mm 2mm">
+    <table class="aud" style="width:92%">
+      <tr class="h"><td>IIC(50)</td><td>CIC(50)</td><td>CIC(55)</td><td>CIC(60/65)</td><td>ITC(50)</td><td>ITC(55)</td><td>ITC(60/65)</td></tr>
+      <tr><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td><td class="c" style="white-space:nowrap"><span class="opt" style="margin-right:2mm"><span class="cb"></span>L</span><span class="opt" style="margin-right:0"><span class="cb"></span>R</span></td></tr>
+    </table></td></tr>
+</table>
+
+<h2>쉘 옵션</h2>
+<table class="box">
+  <tr><td class="gh" rowspan="3" style="width:8%">면판<br>색상</td><td class="c lab" style="width:7%">IIC</td>
+      <td style="width:42%"><span class="cb"></span>블랙 &nbsp;<span class="cb"></span>다크브라운(IX C&amp;G CIC 포함) &nbsp;<span class="cb"></span>모카(IX)</td>
+      <td class="gh" rowspan="3" style="width:7%">벤트<br>위치</td>
+      <td rowspan="3"><span class="opt"><span class="cb"></span>기본 벤트(플레이트)</span><span class="opt"><span class="cb"></span>측면 벤트(쉘사이드)</span></td></tr>
+  <tr class="dash"><td class="c lab">CIC</td><td><span class="cb"></span>모카 &nbsp;&nbsp;<span class="cb"></span>브라운 &nbsp;&nbsp;<span class="cb"></span>블랙(IX/Nx CIC)</td></tr>
+  <tr class="dash"><td class="c lab">ITC</td><td><span class="cb"></span>베이지 &nbsp;<span class="cb"></span>브라운 &nbsp;<span class="cb"></span>블랙(AX,IX ITC)</td></tr>
+  <tr><td class="gh" rowspan="2">쉘<br>색상</td><td class="c lab">IIC</td>
+      <td><span class="cb"></span>블랙 &nbsp;<span class="cb"></span>다크브라운(IX C&amp;G CIC 포함) &nbsp;<span class="cb"></span>블루 &nbsp;<span class="cb"></span>레드</td>
+      <td class="gh" rowspan="2">벤트</td>
+      <td style="padding:0"><table><tr><td class="c lab" style="border:0;border-right:0.6pt solid #555;width:16%">IIC</td><td style="border:0"><span class="opt"><span class="cb"></span>벤트없음</span><span class="opt"><span class="cb"></span>1.3mm</span><span class="opt"><span class="cb"></span>외부벤트</span></td></tr></table></td></tr>
+  <tr class="dash"><td class="c lab">CIC<br>/ ITC</td>
+      <td><span class="cb"></span>베이지 &nbsp;<span class="cb"></span>파랑 &nbsp;<span class="cb"></span>빨강 &nbsp;<span class="cb"></span>블랙(AX ITC, IX/Nx)<br><span class="cb"></span>모카(IX C&amp;G CIC)</td>
+      <td style="padding:0"><table><tr><td class="c lab" style="border:0;border-right:0.6pt solid #555;width:16%">CIC<br>/ ITC</td><td style="border:0"><span class="opt"><span class="cb"></span>벤트없음</span><span class="opt"><span class="cb"></span>1.3mm</span><span class="opt"><span class="cb"></span>1.6mm</span><br><span class="opt"><span class="cb"></span>외부벤트</span><span class="opt"><span class="cb"></span>IROS</span></td></tr></table></td></tr>
+  <tr><td class="gh">커널<br>길이</td><td colspan="2"><span class="opt"><span class="cb"></span>짧게</span><span class="opt" style="margin-left:8mm"><span class="cb"></span>중간</span><span class="opt" style="margin-left:8mm"><span class="cb"></span>길게</span></td>
+      <td class="gh">손잡이<br>길이</td><td><span class="opt"><span class="cb"></span>5mm</span><span class="opt"><span class="cb"></span>7mm</span><span class="opt"><span class="cb"></span>10mm</span><span class="opt"><span class="cb"></span>고리형</span></td></tr>
+  <tr><td class="gh">귀지<br>방지망</td><td colspan="2"><span class="opt"><span class="cb"></span>퀵가드</span><span class="opt" style="margin-left:8mm"><span class="cb"></span>ERT(튜브연장)</span></td>
+      <td class="gh">방향점</td><td><span class="opt"><span class="cb"></span>방향점(베이지만 가능)</span><span class="opt"><span class="cb"></span>방향표시(L/R)(색상쉘만 가능)</span></td></tr>
+</table>
+
+<div style="display:flex; gap:3mm; margin-top:0">
+  <div style="flex:0 0 49%">
+    <h2>선택 옵션</h2>
+    <table class="box"><tr><td style="line-height:2; padding:1.5mm 2mm">
+      <span class="cb"></span>VC(볼륨)<br>
+      <span class="cb"></span>MM(도어버튼, CIC만 가능) <span style="margin-left:6mm"><span class="cb"></span>TC(텔레코일)</span><br>
+      <span class="cb"></span>MM(기둥식 버튼 / ITC 제품 및 px CIC만 가능)</td></tr></table>
+  </div>
+  <div style="flex:1">
+    <h2>액세서리</h2>
+    <table class="box">
+      <tr><td class="gh" style="width:27%;white-space:nowrap">스트리밍 / 리모콘</td><td class="small" style="white-space:nowrap"><span class="opt"><span class="cb"></span>TV Sound</span><span class="opt"><span class="cb"></span>스트림라인 마이크</span><span class="opt"><span class="cb"></span>미니포켓</span></td></tr>
+      <tr><td class="gh">충전기</td><td class="small"><span class="opt"><span class="cb"></span>포터블차저 인시오 IX CIC</span><span class="opt"><span class="cb"></span>인시오 AX 차저</span></td></tr>
+      <tr><td class="gh">크로스</td><td class="small"><span class="cb"></span>크로스 실크 Nx</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>함께 보내시는 물품</h2>
+<table class="box">
+  <tr><td style="border-bottom:0"><span class="opt"><span class="cb"></span>보청기 수량 (<span data-f="q1" style="display:inline-block;width:9mm;text-align:center;"></span>개)</span><span class="opt"><span class="cb"></span>부속품 수량 (<span data-f="q2" style="display:inline-block;width:9mm;text-align:center;"></span>개)</span><span class="opt"><span class="cb"></span>액세서리 수량 (<span data-f="q3" style="display:inline-block;width:9mm;text-align:center;"></span>개)</span><span class="opt"><span class="cb"></span>기타 수량 (<span data-f="q4" style="display:inline-block;width:9mm;text-align:center;"></span>개)</span></td></tr>
+  <tr><td style="border-top:0" class="small">&nbsp;* 함께 보내는 물건에 대해 체크하지 않을 경우, 분실시 본사는 책임을 지지 않습니다.</td></tr>
+</table>
+<table class="box" style="margin-top:2mm">
+  <tr><td class="c lab" style="width:10%; height:23mm">메모</td><td></td></tr>
+</table>
+
+<div class="consent">
+  <div class="t">본인은 뒤면 "개인정보 처리에 관한 동의서에 대한 내용을 상세히 읽어보았고, 이에 관하여 충분히 이해하였으며, 본인의 자유로운 의사에 의해 동의하는바 아래와 같이 서명합니다.</div>
+  <div style="width:62mm">
+    <div class="r" style="margin-bottom:1mm">20 &nbsp; &nbsp; &nbsp; . &nbsp; &nbsp; &nbsp; . &nbsp; &nbsp; &nbsp; .</div>
+    <table><tr><td class="c" style="width:28%">이 름</td><td class="r small">(서 명)</td></tr></table>
+  </div>
+</div>
+
+</div></body></html>

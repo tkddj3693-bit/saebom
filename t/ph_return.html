@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>새봄_포낙_반품의뢰서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root{--b:#5f8aa3;--bd:#4a6f86;--hd:#6b6b6b;--lab:#e3e6e8;--R:#d2453a}
+.page{padding:12mm 11mm 8mm;background:#f6f6f6}
+h1{font-size:28pt;font-weight:900;letter-spacing:-0.5pt;margin-bottom:4mm}
+h1 span{font-weight:400;color:#333}
+.step{background:var(--b);color:#fff;font-weight:700;font-size:12pt;padding:1mm 3.5mm;margin-top:4.5mm}
+td{border-color:#b9b9b9}
+.lab{background:var(--lab);text-align:center;font-weight:500;width:30mm;font-size:10pt}
+.tb td{height:12mm;font-size:10pt;background:#fff}
+.box{border:1.6pt solid var(--bd);border-top:none;background:#fff;padding:3mm 3.5mm}
+.rs td{border:none;vertical-align:top;font-size:10pt;padding:0 2mm}
+.rs th{background:var(--hd);color:#fff;font-weight:500;font-size:10pt;padding:1.2mm;border:none;border-left:1.5pt solid #fff}
+.rs th:first-child{border-left:none}
+.rs .col{border-left:0.6pt solid #999}
+.it{display:block;margin:2.6mm 0 0 1mm;white-space:nowrap}
+.it .cb{width:3.8mm;height:3.8mm;margin-right:1.8mm}
+.etc{border:0.6pt solid #ddd;background:#fff;margin-top:3.5mm;height:20mm;padding:2mm 3mm;font-size:9.5pt;box-shadow:inset 0 0 0 1.5mm #f0f0f0}
+.note{background:#e9ecee;border-radius:3mm;margin-top:5mm;padding:3.5mm 8mm;color:var(--R);font-weight:700;font-size:10.5pt;line-height:1.75}
+.note li{margin-left:4mm}
+.foot{display:flex;justify-content:space-between;bottom:5mm;left:11mm;right:11mm}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+
+<h1>포낙 / 유니트론 <span>반품 의뢰서</span></h1>
+
+<div class="step" style="margin-top:2mm">Step 1. 고객 정보</div>
+<table class="tb">
+  <tr><td class="lab">브랜드</td><td style="width:62mm"><span class="opt" style="font-weight:700;font-size:11pt;margin-right:8mm"><span class="cb round" style="width:4mm;height:4mm"></span>포낙</span><span class="opt" style="font-weight:700;font-size:11pt"><span class="cb round" style="width:4mm;height:4mm"></span>유니트론</span></td>
+      <td class="lab" style="width:24mm">센터명</td><td><span class="fill">새봄보청기(수원)</span><span style="float:right">(센터코드 :&emsp;&emsp;&emsp;&emsp;&emsp;)</span></td></tr>
+  <tr><td class="lab">고객명</td><td></td><td class="lab">반품일</td><td class="c">20<span data-f="rY" style="display:inline-block;min-width:9mm;text-align:center"></span>년<span data-f="rM" style="display:inline-block;min-width:10mm;text-align:center"></span>월<span data-f="rD" style="display:inline-block;min-width:10mm;text-align:center"></span>일</td></tr>
+</table>
+
+<div class="step">Step 2. 제품 선택</div>
+<table class="tb">
+  <tr><td class="lab">제품명</td><td style="width:54mm"></td><td class="lab" style="width:24mm">시리얼 넘버</td><td style="width:38mm"></td><td class="lab" style="width:22mm">사용 일수</td><td></td></tr>
+</table>
+
+<div class="step" style="background:var(--bd)">Step 3. 반품사유</div>
+<div class="box">
+  <table class="rs">
+    <tr><th colspan="2">고객 변심</th><th>만족도</th><th>제품 교환</th><th>품질 불만족</th><th>쉘 불만족</th></tr>
+    <tr>
+      <td style="width:19%"><span class="it"><span class="cb round"></span>단순 변심</span><span class="it"><span class="cb round"></span>구매 취소</span><span class="it"><span class="cb round"></span>연락두절</span><span class="it"><span class="cb round"></span>착용 거부</span><span class="it"><span class="cb round"></span>분실 후 찾음</span></td>
+      <td style="width:17%"><span class="it"><span class="cb round"></span>편이 사용</span><span class="it"><span class="cb round"></span>경제적 이유</span><span class="it"><span class="cb round"></span>보장구관련</span><span class="it"><span class="cb round"></span>장애 진단 관련</span></td>
+      <td class="col" style="width:17%"><span class="it"><span class="cb round"></span>부적응</span><span class="it"><span class="cb round"></span>착용/작동 미숙</span><span class="it"><span class="cb round"></span>효과전무</span></td>
+      <td class="col" style="width:16%"><span class="it"><span class="cb round"></span>모델 변경</span><span class="it"><span class="cb round"></span>등급 변경</span><span class="it"><span class="cb round"></span>색상 변경</span><span class="it"><span class="cb round"></span>사이즈 변경</span></td>
+      <td class="col" style="width:16%"><span class="it"><span class="cb round"></span>충전 불량</span><span class="it"><span class="cb round"></span>배터리 소모</span><span class="it"><span class="cb round"></span>작동 오류</span><span class="it"><span class="cb round"></span>피팅 오류</span><span class="it"><span class="cb round"></span>타사 비교</span><span class="it"><span class="cb round"></span>음질 불만족</span></td>
+      <td class="col"><span class="it"><span class="cb round"></span>사이즈</span><span class="it"><span class="cb round"></span>통증</span><span class="it"><span class="cb round"></span>피드백</span></td>
+    </tr>
+  </table>
+  <div class="etc">기타 사유 <span data-f="etcR" style="display:block"></span></div>
+</div>
+
+<div class="step" style="background:var(--bd)">Step 4. 구성품 반납</div>
+<div class="box">
+  <table class="rs">
+    <tr><th>BTE/RIC 반품 구성품</th><th>공동 구성품</th><th>C&amp;C Line 구성품</th></tr>
+    <tr>
+      <td style="width:33%;padding-left:10mm"><span class="it"><span class="cb round"></span>ACC, DWA</span><span class="it"><span class="cb round"></span>RIC 리시버</span><span class="it"><span class="cb round"></span>Mold / cShell / SlimTip</span></td>
+      <td class="col" style="width:33%;padding-left:10mm"><span class="it"><span class="cb round"></span>포장박스 (1EA)</span><span class="it"><span class="cb round"></span>배터리 (1판)</span><span class="it"><span class="cb round"></span>하드 케이스 (1EA)</span></td>
+      <td class="col" style="padding-left:10mm"><span class="it"><span class="cb round"></span>방습제 캡슐 (1EA)</span><span class="it"><span class="cb round"></span>방습제 통 (1EA)</span><span class="it"><span class="cb round"></span>청소용 Tool (1EA)</span></td>
+    </tr>
+  </table>
+  <div class="etc" style="height:24mm">기타 메모 <span data-f="memo" style="display:block"></span></div>
+</div>
+
+<div class="note"><ul>
+  <li>반품 사유를 체크하여 주시기 바랍니다. (품질 개선을 위한 방안으로 사용됩니다.)</li>
+  <li>반품 기간을 미리 확인해 주시기 바랍니다.</li>
+  <li>구성품 미반납 또는 사용된 제품의 경우 비용이 발생하게 됩니다.</li></ul></div>
+
+<div class="foot"><span>ⓒ Sonova. All rights reserved.&ensp; 서울시 금천구 가산디지털1로 186 제이플라츠 1204호&ensp; TEL 1899-0089&ensp; FAX : 02-859-9332</span><span>개정일: 2023.03.20</span></div>
+</div></body></html>

@@ -1,0 +1,170 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>스타키 귓속형 주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root{--navy:#3d4466;--gold:#e0a43a;--brown:#9a6b4c;--blue:#4561a8;--dark:#3a3a3a;--gray:#e4e4e4;}
+.hd{background:var(--navy);color:#fff;margin:-10mm -10mm 0;padding:7mm 12mm 6mm;display:flex;justify-content:space-between;align-items:center;border-bottom:2.5mm solid #d8d8d8;}
+.hd h1{font-size:23pt;font-weight:700;letter-spacing:-0.5pt}
+.brand{text-align:right}.brand .nm{font-size:19pt;font-weight:700;font-style:italic;color:#fff}
+.brand .nm b{color:var(--gold)}.brand .tg{font-size:10.5pt;color:#e9e3cf;font-weight:500}
+.top{display:flex;gap:7mm;margin-top:6mm}
+.top table td{border:none;border-bottom:0.6pt solid #888;height:9mm;font-size:10pt}
+.top table td.k{background:var(--gray);width:22mm;letter-spacing:5pt;text-align:center;font-weight:500}
+.notice{text-align:center;font-size:12pt;font-weight:700;color:#333;margin:5mm 0 4mm}
+.cols{display:flex;gap:6mm}
+.col{flex:1}
+.bar{display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:700;font-size:12pt;padding:2mm 4mm;}
+.rl{display:inline-flex;gap:5mm}
+.circ{display:inline-flex;width:6mm;height:6mm;border-radius:50%;background:#fff;color:#333;font-size:9pt;align-items:center;justify-content:center;font-weight:700}
+.sel{display:grid;grid-template-columns:1fr 1fr 1fr;padding:3mm 2mm;border-bottom:0.6pt solid #999;font-size:11pt}
+.sec{background:var(--gray);font-weight:700;padding:1.4mm 2.5mm;margin-top:3mm;font-size:10pt;display:flex;justify-content:space-between}
+.rows td{border:none;border-bottom:0.6pt solid #999;padding:1.6mm 2mm;font-size:9pt}
+.cr{display:inline-flex;width:4mm;height:4mm;border:0.7pt solid #444;border-radius:50%;font-size:6.5pt;align-items:center;justify-content:center;margin-right:0.6mm}
+.vt td{border:none;border-bottom:0.6pt solid #999;padding:1.5mm 1.5mm;font-size:8.8pt}
+.vt td.rlc{width:11mm;border-right:0.6pt solid #999;white-space:nowrap}
+.gen .bar{background:var(--dark)} .gen .bar .y{color:#f5d33b;margin-right:3mm}
+.use td{border:none;border-bottom:0.6pt solid #999;padding:2mm;font-size:9.5pt}
+.use td.k{background:var(--gray);font-weight:600;width:28mm}
+.memo{border-bottom:0.6pt solid #999;height:27mm}
+.cb.cr{width:4mm;height:4mm;border:0.7pt solid #444;border-radius:50%;margin:0 0.6mm 0 0;vertical-align:0;display:inline-flex;background:#fff}
+.cb.cr.on{background:#0b2f6b;color:#fff;border-color:#0b2f6b}
+.cb.cr.on::after,.cb.circ.on::after{display:none}
+.cb.circ{width:6mm;height:6mm;border:none;margin:0;vertical-align:0;display:inline-flex;background:#fff}
+.cb.circ.on{background:#f5d33b;color:#222;box-shadow:0 0 0 1.4pt #fff}
+.cb.pc{border:none;background:transparent;width:6mm;margin:0;vertical-align:-0.6mm}
+.dt{display:inline-block;text-align:center}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+<div class="hd"><h1>스타키코리아 귓속형 주문서</h1><div class="brand"><div class="nm"><b>★</b> Starkey</div><div class="tg">보청기는 역시 스타키</div></div></div>
+
+<div class="top">
+ <div style="flex:1">
+  <table><tr><td class="k">고객명</td><td></td></tr>
+  <tr><td class="k">성별</td><td><span class="opt"><span class="cb"></span>남</span><span style="margin-left:18mm"><span class="cb"></span>여</span></td></tr>
+  <tr><td class="k">연령</td><td class="c" style="padding-left:30mm"><span data-f="age" class="dt" style="min-width:14mm"></span>세</td></tr></table>
+  <div class="small" style="margin-top:2mm">* 주문서 작성시 정자로 기재 부탁드립니다.</div>
+ </div>
+ <div style="flex:1">
+  <table><tr><td class="k">업체명</td><td><span class="fill">새봄보청기(수원)</span></td></tr>
+  <tr><td class="k" style="letter-spacing:2pt">업체코드</td><td></td></tr>
+  <tr><td class="k">주문일</td><td>20<span data-f="oY" class="dt" style="width:9mm"></span>년<span data-f="oM" class="dt" style="width:13mm"></span>월<span data-f="oD" class="dt" style="width:13mm"></span>일</td></tr>
+  <tr><td class="k" style="letter-spacing:1pt">출고요청일</td><td>20<span data-f="rY" class="dt" style="width:9mm"></span>년<span data-f="rM" class="dt" style="width:13mm"></span>월<span data-f="rD" class="dt" style="width:13mm"></span>일</td></tr></table>
+ </div>
+</div>
+
+<div class="notice">청력도를 기입해 주시면 제조사에서 최적의 매트릭스(출력)를 선정해서 제작해 드립니다.</div>
+
+<div class="cols">
+ <div class="col">
+  <div class="bar" style="background:var(--brown)"><span>Edge AI</span><span class="rl"><span class="cb circ">R</span><span class="cb circ">L</span></span></div>
+  <div class="sel"><span><span class="cb"></span>24</span><span><span class="cb"></span>20</span><span><span class="cb"></span>16</span></div>
+  <div class="sel"><span><span class="cb"></span>CIC(312A)</span><span><span class="cb"></span>ITC R</span><span><span class="cb"></span>ITE R</span></div>
+  <div class="bar" style="background:var(--blue);margin-top:3mm"><span>Signature<span style="font-size:10pt">(IIC는 24만 가능)</span></span><span class="rl"><span class="cb circ">R</span><span class="cb circ">L</span></span></div>
+  <div class="sel"><span><span class="cb"></span>24</span><span><span class="cb"></span>20</span><span><span class="cb"></span>16</span></div>
+  <div class="sel"><span><span class="cb"></span>IIC</span><span><span class="cb"></span>CIC R</span><span><span class="cb"></span>CIC(10A)</span></div>
+
+  <div class="sec">쉘 색상(SHELL)</div>
+  <table class="rows">
+   <tr><td style="width:7mm;border-right:0.6pt solid #999"><span class="cr">R</span></td><td>Red(<span class="cb pc"></span>) Blue(<span class="cb pc"></span>) Pink(<span class="cb pc"></span>) Black(<span class="cb pc"></span>)</td></tr>
+   <tr><td style="border-right:0.6pt solid #999"><span class="cr">L</span></td><td>Red(<span class="cb pc"></span>) Blue(<span class="cb pc"></span>) Pink(<span class="cb pc"></span>) Black(<span class="cb pc"></span>)</td></tr>
+  </table>
+
+  <div class="sec"><span>손잡이(RH, RL)</span><span style="font-weight:400;font-size:8.5pt"><span class="cb"></span>제조사 권장</span></div>
+  <table class="rows"><tr>
+   <td style="border-right:0.6pt solid #999"><span class="cb cr">R</span><span class="cb cr">L</span> RH <span class="tiny">(직선형)</span> – <span data-f="rhmm" class="dt" style="min-width:8mm"></span><span style="float:right">mm</span></td>
+   <td><span class="cb cr">R</span><span class="cb cr">L</span> RL <span class="tiny">(고리형)</span> – <span data-f="rlmm" class="dt" style="min-width:8mm"></span><span style="float:right">mm</span></td></tr></table>
+  <div class="small" style="margin-top:1.2mm">* CIC 무선 및 충전식 제품은 선택 및 변경 불가</div>
+
+  <div class="sec">벤트(VENT)</div>
+  <table class="vt">
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td style="border-right:0.6pt solid #999">No Vent <span class="tiny">(벤트없음)</span></td><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td>Pressure Vent</td></tr>
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td style="border-right:0.6pt solid #999">Small Vent</td><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td>Medium Vent</td></tr>
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td style="border-right:0.6pt solid #999">Large Vent</td><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td>제조사 권장</td></tr>
+  </table>
+
+  <div class="sec">옵션(MISC·OPTION)</div>
+  <table class="vt">
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td style="border-right:0.6pt solid #999">BWG <span class="tiny">(귀지방지 스프링)</span></td><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td>MMB <span class="tiny">(멀티메모리 충전형)</span></td></tr>
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td style="border-right:0.6pt solid #999">HCK <span class="tiny">(귀지 방지망)</span></td><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td>VC <span class="tiny">(충전형 DC)</span></td></tr>
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td style="border-right:0.6pt solid #999">EXR <span class="tiny">(튜브 길게)</span></td><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td>NVC <span class="tiny">(MMB VC 없이)</span></td></tr>
+   <tr><td class="rlc"><span class="cb cr">R</span><span class="cb cr">L</span></td><td colspan="3">MMB <span class="tiny">(멀티메모리 충전형)</span> + VC <span class="tiny">(충전형 DC)</span></td></tr>
+  </table>
+ </div>
+
+ <div class="col gen">
+  <div class="bar"><span><span class="y">정부지원 보청기</span>Genesis AI</span><span class="rl"><span class="cb circ">R</span><span class="cb circ">L</span></span></div>
+  <div class="sel"><span><span class="cb"></span>24</span><span><span class="cb"></span>20</span><span><span class="cb"></span>16</span></div>
+  <div class="sel"><span><span class="cb"></span>IIC</span><span><span class="cb"></span>CIC(10A)</span><span><span class="cb"></span>ITC R</span></div>
+  <div class="sel" style="grid-template-columns:1fr"><span><span class="cb"></span>보장구용 바코드 발행</span></div>
+
+  <svg viewBox="0 0 330 268" style="width:100%;margin-top:3mm" font-family="Noto Sans CJK KR" font-size="9">
+   <g id="ag"></g><g id="marks"></g>
+  </svg>
+
+    <table class="use" style="margin-top:2mm">
+   <tr><td class="k">보청기 사용기록</td><td class="c" style="background:var(--gray);border-right:0.6pt solid #999">좌</td><td class="c" style="background:var(--gray)">우</td></tr>
+   <tr><td class="k" style="background:none;font-weight:400">보청기 사용여부</td><td class="c" style="border-right:0.6pt solid #999"><span class="opt"><span class="cb"></span>Yes</span><span class="cb"></span>No</td><td class="c"><span class="opt"><span class="cb"></span>Yes</span><span class="cb"></span>No</td></tr>
+   <tr><td class="k" style="background:none;font-weight:400">보청기 사용기간</td><td colspan="2" style="text-align:right;padding-right:6mm"><span data-f="useY" class="dt" style="min-width:12mm"></span>년<span data-f="useM" class="dt" style="min-width:20mm"></span>개월</td></tr>
+   <tr><td class="k" style="background:none;font-weight:400">제조사 / 모델명</td><td colspan="2"></td></tr>
+  </table>
+  <div class="sec" style="margin-top:4mm">기타 모델 및 추가 의뢰내역</div>
+  <div class="memo" data-f="memo" style="padding:1.5mm 2mm"></div>
+ </div>
+</div>
+<div class="foot">SF-07-01(Rev.7)</div>
+<div style="display:none"><span data-f="aR125" style="display:none"></span><span data-f="aR250" style="display:none"></span><span data-f="aR500" style="display:none"></span><span data-f="aR750" style="display:none"></span><span data-f="aR1000" style="display:none"></span><span data-f="aR1500" style="display:none"></span><span data-f="aR2000" style="display:none"></span><span data-f="aR3000" style="display:none"></span><span data-f="aR4000" style="display:none"></span><span data-f="aR6000" style="display:none"></span><span data-f="aR8000" style="display:none"></span><span data-f="aL125" style="display:none"></span><span data-f="aL250" style="display:none"></span><span data-f="aL500" style="display:none"></span><span data-f="aL750" style="display:none"></span><span data-f="aL1000" style="display:none"></span><span data-f="aL1500" style="display:none"></span><span data-f="aL2000" style="display:none"></span><span data-f="aL3000" style="display:none"></span><span data-f="aL4000" style="display:none"></span><span data-f="aL6000" style="display:none"></span><span data-f="aL8000" style="display:none"></span></div>
+</div>
+<script>
+// 청력도 그리드 (125~8000Hz, 0~110dB)
+const g=document.getElementById('ag'),NS='http://www.w3.org/2000/svg';
+const L=34,T=20,W=286,H=244; // plot box
+const fr=['125','250','500','1000','2000','4000','8000Hz'];
+function el(n,a,t){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t)e.textContent=t;g.appendChild(e);return e;}
+el('rect',{x:L-14,y:T,width:12,height:H,fill:'#555'});
+for(let d=0;d<=110;d+=10){const y=T+7+d*(H-24)/110;el('line',{x1:L,x2:L+W,y1:y,y2:y,stroke:'#999','stroke-width':0.6});
+ el('text',{x:L-8,y:y+3,'text-anchor':'middle',fill:'#fff','font-size':7},String(d));}
+el('text',{x:L-8,y:T+H-3,'text-anchor':'middle',fill:'#fff','font-size':6.5},'dB');
+for(let i=0;i<7;i++){const x=L+12+i*(W-24)/6;el('line',{x1:x,x2:x,y1:T,y2:T+H,stroke:'#888','stroke-width':0.7});
+ el('text',{x:x+(i==6?6:0),y:T-7,'text-anchor':'middle',fill:'#333'},fr[i]);
+ if(i<6&&i>=2){const xm=x+(W-24)/12;el('line',{x1:xm,x2:xm,y1:T,y2:T+H,stroke:'#aaa','stroke-width':0.6,'stroke-dasharray':'2,2'});}}
+el('rect',{x:L,y:T,width:W,height:H,fill:'none',stroke:'#555','stroke-width':0.8});
+// 앱: 청력값을 그래프에 표시 (R = 빨간 O, L = 파란 X)
+const AF={125:0,250:1,500:2,750:2.5,1000:3,1500:3.5,2000:4,3000:4.5,4000:5,6000:5.5,8000:6};
+window.onFill=function(p){
+  const m=document.getElementById('marks'); while(m.firstChild)m.removeChild(m.firstChild);
+  const mk=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);m.appendChild(e);return e;};
+  for(const ear of ['R','L']){
+    const col=ear==='R'?'#d0302f':'#1f57c3'; const pts=[];
+    for(const f of Object.keys(AF).map(Number).sort((a,b)=>a-b)){
+      const v=parseFloat(String(p.t['a'+ear+f]||'').replace(/[^0-9.\-]/g,''));
+      if(isNaN(v))continue;
+      const x=L+12+AF[f]*(W-24)/6, y=T+7+Math.max(-10,Math.min(120,v))*(H-24)/110; pts.push([x,y]);
+    }
+    if(pts.length>1)mk('polyline',{points:pts.map(q=>q.join(',')).join(' '),fill:'none',stroke:col,'stroke-width':1.1,'stroke-dasharray':ear==='L'?'3,2':''});
+    for(const [x,y] of pts){
+      if(ear==='R')mk('circle',{cx:x,cy:y,r:4,fill:'#fff',stroke:col,'stroke-width':1.5});
+      else{mk('line',{x1:x-3.6,y1:y-3.6,x2:x+3.6,y2:y+3.6,stroke:col,'stroke-width':1.6});mk('line',{x1:x-3.6,y1:y+3.6,x2:x+3.6,y2:y-3.6,stroke:col,'stroke-width':1.6});}
+    }
+  }
+};
+</script>
+</body></html>

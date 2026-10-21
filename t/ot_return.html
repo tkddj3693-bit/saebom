@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>반품 의뢰 신청서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+body{font-size:11pt}
+.page{padding:16mm 20mm 12mm}
+.card{border:1pt solid #333;height:100%;display:flex;flex-direction:column}
+.head{display:flex;align-items:center;border-bottom:1pt solid #333;padding:4mm 5mm}
+.head .dm{font-size:20pt;font-weight:900;color:#2b2d30;letter-spacing:-0.5pt;width:42mm}
+.head .co{font-size:14pt;font-weight:700;flex:1}
+.head .co small{font-size:9pt;font-weight:500}
+.head .tel{font-size:9.6pt;line-height:1.6;text-align:right}
+h1{text-align:center;font-size:19pt;font-weight:900;margin:5mm 0 1mm;letter-spacing:1pt}
+.use{text-align:right;font-size:9.6pt;padding-right:5mm;margin-bottom:2mm}
+table.f td{border:0.8pt solid #333;padding:0 4mm;height:15mm}
+table.f{border-left:hidden;border-right:hidden}
+table.f td.k{width:52mm;text-align:center;background:#e6e6e6;letter-spacing:5pt;font-weight:500}
+table.f td.k.nl{letter-spacing:0;line-height:1.5;padding:3mm 2mm}
+.date span{display:inline-block;width:20mm;text-align:right}
+.note{padding:4mm 6mm;font-size:10pt;line-height:1.7;border-bottom:0.8pt solid #333}
+.reason{display:flex;flex:1;min-height:40mm}
+.reason .k{width:52mm;background:#e6e6e6;display:flex;align-items:center;justify-content:center;letter-spacing:5pt;border-right:0.8pt solid #333}
+.bar{background:#111;color:#fff;font-weight:700;padding:4mm 6mm;font-size:11pt;line-height:1.6}
+.cb{width:4mm;height:4mm;vertical-align:-0.7mm;margin-right:1.5mm}
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+<style>[data-f="reason"] .fv{font-size:11pt!important;line-height:1.6!important}</style>
+<style>.dt span{width:auto!important}.dt .dn{display:inline-block;min-width:16mm;text-align:center}</style>
+</head>
+<body><div class="page"><div class="card">
+
+<div class="head">
+  <div class="dm">Demant</div>
+  <div class="co">디만트코리아<small>(주)</small></div>
+  <div class="tel">TEL : 02)2022-3900<br>FAX : 02)2022-3939</div>
+</div>
+
+<h1>반품 의뢰 신청서</h1>
+<div class="use">(회사용)</div>
+
+<table class="f">
+  <tr><td class="k">브 랜 드</td><td><span class="opt" style="margin-right:12mm"><span class="cb"></span>오티콘</span><span class="opt" style="margin-right:12mm"><span class="cb"></span>버나폰</span><span class="opt"><span class="cb"></span>필립스</span></td></tr>
+  <tr><td class="k">센 터 명</td><td><span class="fill">새봄보청기(수원)</span></td></tr>
+  <tr><td class="k">고 객 명</td><td style="position:relative"><span data-f="cname"></span><span style="position:absolute;right:4mm;top:50%;transform:translateY(-50%)">(인)</span></td></tr>
+  <tr><td class="k">모 델 명</td><td></td></tr>
+  <tr><td class="k" style="letter-spacing:2pt">제품 S/N</td><td></td></tr>
+  <tr><td class="k">구 입 일</td><td class="date c dt">20<span data-f="bY" class="dn" style="min-width:7mm;text-align:left"></span>년<span data-f="bM" class="dn"></span>월<span data-f="bD" class="dn"></span>일</td></tr>
+  <tr><td class="k" style="letter-spacing:2pt">반품 신청일</td><td class="date c dt">20<span data-f="rY" class="dn" style="min-width:7mm;text-align:left"></span>년<span data-f="rM" class="dn"></span>월<span data-f="rD" class="dn"></span>일</td></tr>
+  <tr><td class="k nl">반품 대상 보청기<br>급여지원금<br>청구 여부</td><td><span class="opt" style="margin-right:16mm"><span class="cb"></span>미청구</span><span class="opt"><span class="cb"></span>청구 취소 완료</span></td></tr>
+</table>
+<div class="note">※ 만약, 신청 당일 현재 반품코자 하는 보청기의 급여지원금 청구가 이미 완료된 경우에는 반품이 불가하오니, 반드시 먼저 기 청구된 급여 지원금 신청을 취소하신 후 반품을 신청하여 주시기 바랍니다.</div>
+<div class="reason"><div class="k">반품 사유</div><div style="flex:1;padding:4mm 5mm" data-f="reason"></div></div>
+<div class="bar">※ 보청기 반품 의뢰서 본 신청서를 반드시 기존 보청기 제품과 구성품들을 함께 동봉하여 반품을 신청해 주시기 바랍니다.</div>
+
+</div></div></body></html>
