@@ -208,3 +208,46 @@ FORMS.ws_widex_repair = {
     ] },
   ],
 };
+
+FORMS.ws_widex_ite = {
+  brand: 'WSA · 와이덱스', name: '와이덱스 귓속형 주문서', template: 't/ws_widex_ite.html', file: '와이덱스_귓속형_주문서',
+  initC: [50],
+  sections: [
+    { title: '기본 정보', items: [
+      { type: 'date', label: '주문 접수일', parts: { y: 'rY', m: 'rM', d: 'rD' }, t: 'rDate', today: true },
+      { type: 'date', label: '본사 출고 요청일', parts: { y: 'sY', m: 'sM', d: 'sD' }, t: 'sDate' },
+      { type: 'text', label: '고객명', t: 'nm', key: 'name' },
+      { type: 'text', label: '나이', t: 'age', numeric: true, suffix: '세' },
+      { type: 'choice', label: '성별', c: [2, 3], o: ['남', '여'], single: true },
+      { type: 'choice', label: '보청기 사용 경험', c: [0, 1], o: ['유', '무'], single: true },
+      { type: 'choice', label: '전화 상담 요청', c: [4], o: ['전화 상담을 원해요'], tip: '체크하면 제조사가 상담 요청 연락처(매장 번호)로 전화해요' },
+    ] },
+    { title: '청력', hint: 'dB 숫자만 넣으세요. 모르는 칸은 비워도 돼요.', items: [
+      { type: 'aud', freqs: WS_FREQ, L: [2, 3, 4, 5, 6, 7, 8], R: [9, 10, 11, 12, 13, 14, 15] },
+    ] },
+    { title: '제품', items: [
+      { type: 'text', label: '주문 모델명', t: 'model' },
+      { type: 'choice', label: '장애인 보장구 급여 적용 (공단 지원)', c: [5, 6], o: ['유', '무'], single: true },
+      { type: 'choice', label: '방향', c: [7, 8], o: ['L(좌)', 'R(우)'] },
+      { type: 'choice', label: '형태 (크기·출력)', c: [9, 10, 11, 12, 13, 14, 15, 16], single: true,
+        o: ['CIC M · 107/53(TR)', 'CIC M · 114/57', 'CIC · 107/53(TR)', 'CIC · 114/57', 'XP(ITC) · 118/59', 'ALLURE · S(80dB)', 'ALLURE · M(90dB)', 'ALLURE · P(95dB)'] },
+    ] },
+    { title: '보청기 색상', hint: '괄호 안에 고른 형태가 들어 있는 색상만 고를 수 있어요.', items: [
+      { type: 'choice', label: '쉘 + 면판 색상', c: [17, 18, 19, 20, 21, 22, 23, 24, 25], single: true,
+        o: ['베이지 + 베이지 (CIC, CICm, XP)', '블루 + 다크브라운 (CIC, CICm)', '레드 + 다크브라운 (CIC, CICm)', '블루 + 베이지 (XP)', '레드 + 베이지 (XP)',
+            '블랙 + 블랙 (ALLURE ITE)', '에스프레소 + 에스프레소 (ALLURE ITE)', '모카 + 모카 (ALLURE ITE)', '베이지 + 베이지 (ALLURE ITE)'] },
+    ] },
+    { title: '옵션 사항', items: [
+      { type: 'choice', label: '벤트', c: [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36], single: true,
+        o: ['No-Vent', 'XS (1.0mm)', 'S (1.5mm)', 'M (2.0mm)', 'L (2.5mm)', 'XL (3.0mm)', 'Y-Vent', 'IROS', '제조사권장', 'D-Vent', 'Trench Vent'] },
+      { type: 'choice', label: 'Canal 길이 (귓구멍 쪽 길이)', c: [37, 38, 39], o: ['짧게', '보통', '길게'], single: true },
+      { type: 'choice', label: '귀지 방지', c: [40, 41], o: ['Wax guard', 'Extended Receiver Tubing'], single: true },
+      { type: 'choice', label: '손잡이 길이', c: [42, 43, 44, 45], o: ['짧게', '보통', '길게', '고리형'], single: true },
+      { type: 'choice', label: '액세서리', c: [46, 47, 48, 49], o: ['RC-DEX', 'COM-DEX', 'TV-DEX', 'DRY-LUX'] },
+    ] },
+    { title: '특이사항', items: [
+      { type: 'choice', label: '정부지원 라벨', c: [50], o: ['보청기 정부지원 라벨 추가 부탁드립니다.'], tip: '처음부터 체크돼 있어요. 공단 지원 없이 자비로 사는 주문이면 체크를 빼세요.' },
+      { type: 'textarea', label: '특이사항', t: 'memo' },
+    ] },
+  ],
+};

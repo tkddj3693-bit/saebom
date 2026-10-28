@@ -19,7 +19,7 @@ function home() {
     BRANDS.map(b => `<div class="brand"><h2>${esc(b.name)}</h2>` +
       b.forms.map(f => FORMS[f.id] ? `<button class="fbtn" data-id="${f.id}">${esc(f.name)}</button>` : `<button class="fbtn off" disabled>${esc(f.name)}</button>`).join('') +
       `</div>`).join('') +
-    `<p class="foot">입력한 내용은 어디에도 저장되지 않아요. 보내고 나면 화면을 닫으면 돼요.<br>새봄 주문서 v1.0 (2026-10-21)</p></main>`;
+    `<p class="foot">입력한 내용은 어디에도 저장되지 않아요. 보내고 나면 화면을 닫으면 돼요.<br>새봄 주문서 v1.1 (2026-10-28)</p></main>`;
   app.querySelectorAll('.fbtn[data-id]').forEach(b => b.onclick = () => openForm(b.dataset.id));
   window.scrollTo(0, 0);
 }

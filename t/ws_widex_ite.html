@@ -1,0 +1,127 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>WIDEX 귓속형 주문서</title>
+<link rel="stylesheet" href="common.css">
+<style>
+:root { --dk:#5a5a5a; --lt:#ececec; }
+body { font-size: 10pt; }
+.page { padding: 9mm 12mm 8mm; }
+.tag { font-weight:700; font-size:11pt; margin-bottom:1.5mm; }
+.hd { background:var(--dk); color:#fff; display:flex; align-items:center; height:19mm; padding:0 7mm; border-bottom:1.3mm solid #bdbdbd; }
+.hd .logo { line-height:1.1; width:60mm; }
+.hd .logo b { font-size:19pt; font-weight:900; letter-spacing:1pt; }
+.hd .logo small { display:block; font-size:6.3pt; letter-spacing:0.6pt; }
+.hd h1 { font-size:23pt; font-weight:700; letter-spacing:1.5pt; }
+table.main { border:1pt solid #555; table-layout:fixed; }
+td { border:0.6pt solid #888; padding:0 2.2mm; height:8.6mm; }
+.k { background:var(--dk); color:#fff; text-align:center; font-weight:500; letter-spacing:2mm; white-space:nowrap; padding:0 1mm 0 3mm; }
+.k.ns { letter-spacing:0; padding:0 1.2mm; }
+.k.sm { font-size:9pt; letter-spacing:0; padding:0 1mm; line-height:1.25; white-space:normal; }
+.bar { background:var(--dk); color:#fff; text-align:center; letter-spacing:4mm; height:8mm; border-bottom:1.1mm solid #bdbdbd; }
+.cb { width:3.6mm; height:3.6mm; vertical-align:-0.7mm; margin-right:1.2mm; }
+.date { letter-spacing:0; word-spacing:0; text-align:center; }
+.date i { font-style:normal; display:inline-block; width:15mm; }
+.aud td { height:7mm; text-align:center; font-size:8.5pt; padding:0; }
+.aud .hz td { background:var(--lt); }
+.shape th { background:var(--lt); font-weight:700; height:7mm; border:0.6pt solid #888; }
+.shape td { text-align:center; height:15mm; line-height:1.7; }
+.shape td .in { display:inline-block; text-align:left; }
+.color td { height:auto; padding:1.6mm 2.5mm; line-height:1.75; font-size:9pt; }
+.opts td { height:9.5mm; }
+.opts td.wrap { height:auto; padding:1.6mm 2.2mm; line-height:1.75; }
+.opt { margin-right:4mm; font-size:9pt; }
+.note td { vertical-align:top; padding:2mm 3mm; }
+.consent { background:#ddd; border:1pt solid #555; border-top:none; padding:2mm 3mm 2.5mm; font-size:8.2pt; line-height:1.45; }
+.sign { display:flex; justify-content:flex-end; margin-top:1.5mm; }
+.sign table { width:128mm; border:0.8pt solid #555; }
+.sign td { background:#fff; height:7.5mm; }
+.sign td.sk { background:#ddd; text-align:center; width:18mm; letter-spacing:2mm; }
+</style><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../lib/noto-sans-kr.css">
+<style>
+body{margin:0;background:#fff}
+.page{font-family:"Noto Sans KR","Noto Sans CJK KR",sans-serif}
+.fv{color:#0b2f6b;font-weight:700;font-size:10pt;letter-spacing:0.2pt}
+.cb.on{border-color:#0b2f6b;position:relative}
+.cb.on::after{content:"";position:absolute;left:0.95mm;top:-0.7mm;width:1.1mm;height:2.5mm;border:solid #0b2f6b;border-width:0 0.65mm 0.65mm 0;transform:rotate(45deg);font-size:0}
+</style>
+<script src="../lib/html2canvas.min.js"></script>
+<script src="../lib/jspdf.umd.min.js"></script>
+<script>
+window.makePdf = async function(){
+  await document.fonts.ready;
+  const el=document.querySelector('.page');
+  const canvas=await html2canvas(el,{scale:2.2,backgroundColor:'#ffffff',useCORS:true,logging:false});
+  const pdf=new jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
+  pdf.addImage(canvas.toDataURL('image/jpeg',0.92),'JPEG',0,0,210,297);
+  return pdf.output('blob');
+};
+</script>
+</head><body><div class="page">
+<div class="tag">[제조사용]</div>
+<div class="hd"><div class="logo"><b>WIDEX</b><small>SOUND LIKE NO OTHER</small></div><h1>귓속형 주문서</h1></div>
+
+<table class="main">
+  <colgroup><col style="width:19%"><col style="width:31%"><col style="width:19%"><col></colgroup>
+  <tr><td class="k">센터명</td><td><span class="fill">새봄보청기(수원)</span></td><td class="k ns">본사 출고 요청일</td><td class="date"><span data-f="sY" style="display:inline-block;width:16mm;text-align:center"></span>년<span data-f="sM" style="display:inline-block;width:13mm;text-align:center"></span>월<span data-f="sD" style="display:inline-block;width:13mm;text-align:center"></span>일</td></tr>
+  <tr><td class="k">고객명</td><td><span data-f="nm"></span></td><td class="k ns">보청기 사용 경험</td><td><span class="opt"><span class="cb"></span>유</span> <span class="opt" style="margin-left:12mm"><span class="cb"></span>무</span></td></tr>
+  <tr><td class="k">나이</td><td style="text-align:right"><span data-f="age" style="float:left;text-align:left"></span>성별 : <span class="cb"></span>남 &nbsp; &nbsp;<span class="cb"></span>여</td><td class="k ns">전화 상담 요청</td><td style="font-size:8.6pt; white-space:nowrap"><span class="cb"></span>전화 상담을 원하시면 체크해 주십시오.</td></tr>
+  <tr><td class="k ns">주문 접수일</td><td class="date"><span data-f="rY" style="display:inline-block;width:16mm;text-align:center"></span>년<span data-f="rM" style="display:inline-block;width:13mm;text-align:center"></span>월<span data-f="rD" style="display:inline-block;width:13mm;text-align:center"></span>일</td><td class="k ns">상담 요청 연락처</td><td><span class="fill">010-5559-6640</span></td></tr>
+</table>
+
+<table class="main aud" style="margin-top:1.2mm">
+  <colgroup><col style="width:6.5%"><col span="7"><col style="width:6.5%"><col span="7"></colgroup>
+  <tr class="hz"><td></td><td>250Hz</td><td>500Hz</td><td>1KHz</td><td>2KHz</td><td>4KHz</td><td>6KHz</td><td>8KHz</td><td></td><td>250Hz</td><td>500Hz</td><td>1KHz</td><td>2KHz</td><td>4KHz</td><td>6KHz</td><td>8KHz</td></tr>
+  <tr><td>L(좌)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>R(우)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<table class="main" style="margin-top:1.2mm">
+  <colgroup><col style="width:19%"><col style="width:31%"><col style="width:19%"><col></colgroup>
+  <tr><td class="k ns" style="letter-spacing:1.5mm">주문모델명</td><td colspan="3" style="height:10mm"><span data-f="model"></span></td></tr>
+  <tr><td class="k sm">장애인 보장구 급여<br>적용 여부</td><td><span class="opt" style="margin-left:6mm"><span class="cb"></span>유</span><span class="opt" style="margin-left:10mm"><span class="cb"></span>무</span></td><td class="k">방향</td><td><span class="opt" style="margin-left:6mm"><span class="cb"></span>L</span><span class="opt" style="margin-left:16mm"><span class="cb"></span>R</span></td></tr>
+</table>
+
+<table class="main shape" style="margin-top:1.2mm">
+  <colgroup><col style="width:19%"><col><col><col><col></colgroup>
+  <tr><td class="k" rowspan="2">형태</td><th>CIC M</th><th>CIC</th><th>XP(ITC)</th><th>ALLURE</th></tr>
+  <tr><td><span class="in"><span class="cb"></span>107/53(TR)<br><span class="cb"></span>114/57</span></td>
+      <td><span class="in"><span class="cb"></span>107/53(TR)<br><span class="cb"></span>114/57</span></td>
+      <td><span class="in"><span class="cb"></span>118/59</span></td>
+      <td style="line-height:1.45"><span class="in"><span class="cb"></span>S(80dB)<br><span class="cb"></span>M(90dB)<br><span class="cb"></span>P(95dB)</span></td></tr>
+</table>
+
+<table class="main color" style="margin-top:1.2mm">
+  <colgroup><col style="width:19%"><col></colgroup>
+  <tr><td class="k" style="padding:0 1mm 0 3mm">보청기 색상</td><td>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; column-gap:3mm">
+      <span><span class="cb"></span>베이지 쉘 + 베이지 면판 (CIC, CICm, XP)</span><span><span class="cb"></span>블루 쉘 + 다크브라운 면판 (CIC, CICm)</span>
+      <span><span class="cb"></span>레드 쉘 + 다크브라운 면판 (CIC, CICm)</span><span><span class="cb"></span>블루 쉘 + 베이지 면판 (XP)</span>
+      <span><span class="cb"></span>레드 쉘 + 베이지 면판 (XP)</span><span><span class="cb"></span>블랙 쉘 + 블랙 면판 (ALLURE ITE)</span>
+      <span><span class="cb"></span>에스프레소 쉘 + 에스프레소 면판 (ALLURE ITE)</span><span><span class="cb"></span>모카 쉘 + 모카 면판 (ALLURE ITE)</span>
+      <span><span class="cb"></span>베이지 쉘 + 베이지 면판 (ALLURE ITE)</span><span></span>
+    </div></td></tr>
+</table>
+
+<table class="main opts" style="margin-top:1.2mm">
+  <colgroup><col style="width:19%"><col style="width:31%"><col style="width:19%"><col></colgroup>
+  <tr><td class="bar" colspan="4" style="padding:0">옵션사항</td></tr>
+  <tr><td class="k">벤트</td><td class="wrap" colspan="3">
+    <div style="display:grid; grid-template-columns: repeat(6, auto); column-gap:2mm; font-size:9pt">
+      <span><span class="cb"></span>No-Vent</span><span><span class="cb"></span>XS (1.0mm)</span><span><span class="cb"></span>S (1.5mm)</span><span><span class="cb"></span>M (2.0mm)</span><span><span class="cb"></span>L (2.5mm)</span><span><span class="cb"></span>XL (3.0mm)</span>
+      <span><span class="cb"></span>Y-Vent</span><span><span class="cb"></span>IROS</span><span><span class="cb"></span>제조사권장</span><span><span class="cb"></span>D-Vent</span><span style="grid-column: span 2"><span class="cb"></span>Trench Vent</span>
+    </div></td></tr>
+  <tr><td class="k ns" style="letter-spacing:0.5mm">Canal 길이</td><td><span class="opt"><span class="cb"></span>짧게</span><span class="opt"><span class="cb"></span>보통</span><span class="opt"><span class="cb"></span>길게</span></td>
+      <td class="k">귀지방지</td><td><span class="opt"><span class="cb"></span>Wax guard</span><span class="opt" style="margin-right:0"><span class="cb"></span>Extended Receiver Tubing</span></td></tr>
+  <tr><td class="k ns" style="letter-spacing:1mm">손잡이 길이</td><td colspan="3"><span class="opt" style="margin-right:9mm"><span class="cb"></span>짧게</span><span class="opt" style="margin-right:9mm"><span class="cb"></span>보통</span><span class="opt" style="margin-right:9mm"><span class="cb"></span>길게</span><span class="opt"><span class="cb"></span>고리형</span></td></tr>
+  <tr><td class="k">악세사리</td><td colspan="3"><span class="opt" style="margin-right:12mm"><span class="cb"></span>RC-DEX</span><span class="opt" style="margin-right:12mm"><span class="cb"></span>COM-DEX</span><span class="opt" style="margin-right:12mm"><span class="cb"></span>TV-DEX</span><span class="opt"><span class="cb"></span>DRY-LUX</span></td></tr>
+</table>
+
+<table class="main note" style="margin-top:1.2mm">
+  <tr><td style="height:44mm"><b>&lt;특이사항&gt;</b>
+    <div style="margin-top:1.6mm"><span class="cb"></span>보청기 정부지원 라벨 추가 부탁드립니다.</div>
+    <div data-f="memo" style="margin-top:1mm"></div></td></tr>
+</table>
+
+<div class="consent">본인은 뒷면 "개인정보 처리에 관한 동의서"에 대한 내용을 상세히 읽어보았고, 이에 관하여 충분히 이해하였으며, 본인의 자유로운 의사에 의해 동의하는바 아래와 같이 서명합니다.
+  <div style="text-align:right; margin-top:0.6mm; padding-right:8mm">20 <span style="display:inline-block; width:12mm"></span>. <span style="display:inline-block; width:12mm"></span>. <span style="display:inline-block; width:12mm"></span>.</div>
+  <div class="sign"><table><tr><td class="sk">이름</td><td></td><td class="sk">서명</td><td></td></tr></table></div>
+</div>
+</div></body></html>
